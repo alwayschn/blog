@@ -1,15 +1,210 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Core"><title>github + hexo 搭建个人博客 · 张小剩的博客</title><meta name="description" content="安装 Node.js首先下载稳定版
-下载 Node.js
-我这里给的是64位的。
-安装选项全部默认，一路点击Next。
-最后安装好之后，按Win+R打开命令提示符，输入node -v和npm -v，如果出现版本号，那么就安装成功了。
-添加国内镜像源如果没有梯子的话，可以使用阿里的国内镜像进行加速。
-"><meta name="keywords" content="极限博客,极限Blog,博客,极限"><meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="stylesheet" href="/alwaysblog/css/style.css"><link rel="stylesheet" href="/alwaysblog/css/blog_basic.css"><link rel="stylesheet" href="/alwaysblog/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/alwaysblog/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/alwaysblog/images/logo@2x.png" style="width:127px"><h3><a href="/">张小剩的博客</a></h3><div class="description"><p>心之所愿，无事不成。<br>Nothing is impossible to a willing heart.</p></div></div></div><ul class="social-links"><li><a href="https://github.com/mrcore"><i class="fa fa-github"></i></a></li><li><a href="mailto:x@jixian.io"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="http://sighttp.qq.com/authd?IDKEY="><i class="fa fa-qq"></i></a></li><li><a target="_blank" rel="noopener" href="https://zhihu.com/people/"><i class="fa fa-mortar-board"></i></a></li></ul><div class="footer"><div class="p"><span>© 2017 - 2020 </span><i class="fa fa-star"></i><span> Core</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span>& </span><a href="https://github.com/mrcore/hexo-theme-Anatole-Core" target="_blank">Anatole-Core</a></div><div class="beian"><a href="http://www.beian.miit.gov.cn/" target="_blank">粤ICP备15011643号</a><span style="height:10px;margin-left:10px">|</span><img src="/alwaysblog/images/gongan.png" style="height:10px;margin-left:10px;position:relative;top:1px"><span style="margin-left:2px">粤公网安备 44030402003967号</span></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/guestbook">留言</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"></a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>github + hexo 搭建个人博客</a></h3></div><div class="post-content"><h2 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h2><p>首先下载稳定版</p><p><a target="_blank" href="https://nodejs.org/dist/v9.11.1/node-v9.11.1-x64.msi" rel="external nofollow noreferrer noopener">下载 Node.js</a></p><p>我这里给的是64位的。</p><p>安装选项全部默认，一路点击<code>Next</code>。</p><p>最后安装好之后，按<code>Win+R</code>打开命令提示符，输入<code>node -v</code>和<code>npm -v</code>，如果出现版本号，那么就安装成功了。</p><h2 id="添加国内镜像源"><a href="#添加国内镜像源" class="headerlink" title="添加国内镜像源"></a>添加国内镜像源</h2><p>如果没有梯子的话，可以使用阿里的国内镜像进行加速。</p><pre><code class="bash">npm config set registry https://registry.npm.taobao.org
-</code></pre><h2 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h2><p>为了把本地的网页文件上传到 github 上面去，我们需要用到分布式版本控制工具————Git</p><p><a target="_blank" href="https://git-scm.com/download/win" rel="external nofollow noreferrer noopener">下载 Git</a></p><p>安装选项还是全部默认，只不过最后一步添加路径时选择<code>Use Git from the Windows Command Prompt</code>，这样我们就可以直接在命令提示符里打开git了。</p><p>安装完成后在命令提示符中输入<code>git --version</code>验证是否安装成功。</p><h2 id="注册-Github-账号"><a href="#注册-Github-账号" class="headerlink" title="注册 Github 账号"></a>注册 Github 账号</h2><p>接下来就去注册一个 github 账号，用来存放我们的网站。大多数小伙伴应该都有了吧，作为一个合格的程序猿（媛）还是要有一个的。</p><p>打开 <a href="%5BGitHub%5D(https://github.com/)">github </a>, 新建一个项目，输入自己的项目名字，README 初始化也要勾上。</p><p>然后项目就建成了，点击<code>Settings</code>，向下拉到最后有个<code>GitHub Pages</code>，点击<code>Choose a theme</code>选择一个主题。然后等一会儿，再回到<code>GitHub Pages</code>，</p><p>点击那个链接，就会出现自己的网页啦</p><h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>在合适的地方新建一个文件夹，用来存放自己的博客文件，比如我的博客文件都存放在<code>D:\study\program\blog</code>目录下。</p><p>在该目录下右键点击<code>Git Bash Here</code>，打开 git 的控制台窗口，以后我们所有的操作都在 git 控制台进行，就不要用 Windows 自带的控制台了。</p><p>定位到该目录下，输入<code>npm i hexo-cli -g</code> 安装 Hexo。会有几个报错，无视它就行。</p><p>安装完后输入<code>hexo -v</code>验证是否安装成功。</p><p>然后就要初始化我们的网站，输入<code>hexo init</code>初始化文件夹，接着输入<code>npm install</code>安装必备的组件。</p><p>这样本地的网站配置也弄好啦，输入<code>hexo g</code>生成静态网页，然后输入<code>hexo s</code>打开本地服务器，然后浏览器打开 <a href="https://link.zhihu.com/?target=http://localhost:4000/" rel="external nofollow noreferrer">http://localhost:4000/</a>，就可以看到我们的博客啦</p><p>按<code>ctrl+c</code>关闭本地服务器。</p><p>官网： <a target="_blank" href="https://hexo.io/zh-cn/docs/" rel="external nofollow noreferrer noopener">https://hexo.io/zh-cn/docs/</a></p><h2 id="连接-Github-与本地"><a href="#连接-Github-与本地" class="headerlink" title="连接 Github 与本地"></a>连接 Github 与本地</h2><p>首先右键打开 git bash，然后输入下面命令：</p><pre><code class="bash">git config --global user.name &quot;alwayscn&quot;
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/alwaysblog/favicon_1.ico">
+  <link rel="icon" type="image/png" href="/alwaysblog/favicon_1.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="author" content="张小剩">
+  
+    <meta name="description" content="折腾是一种乐趣，求知是一种追求！">
+  
+  
+    <meta name="keywords" content="github,hexo,github 博客," />
+  
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <title>github + hexo 搭建个人博客 - 张小剩的博客</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.10.0/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.8.7/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+  <link rel="stylesheet" href="/alwaysblog/lib/prettify/tranquil-heart.min.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"  >
+
+<link rel="stylesheet" href="/alwaysblog/css/main.css"  >
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+  <style type="text/css">
+    .banner-bg {
+      
+        background-image: url('/alwaysblog/static/images/wallhaven-8opx8k.jpg');
+      
+      background-position: center;
+      background-repeat: repeat-y;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  </style>
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/alwaysblog/atom.xml" title="张小剩的博客" type="application/atom+xml">
+</head>
+
+<body class="banner-bg">
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/alwaysblog/">&nbsp;<strong>张小剩的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/">主页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/links/">友链</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/about/">关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2 rgba-black-slight" id="background">
+      <div class="full-bg-img">
+        <div class="mask flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+            
+              <br>
+              <p class="mt-3">
+                <i class="far fa-calendar-alt"></i>
+                <span class="post-date">2022-01-28&nbsp;|&nbsp;</span>
+                <i class="far fa-chart-bar"></i>
+                <span class="post-count">1.2k</span>字&nbsp;|&nbsp;
+                <i class="far fa-clock"></i>
+                <span class="post-count">4</span>分钟
+                
+              </p>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="mainContent" class="rgba-black-slight">
+    
+      
+<meta name="referrer" content="no-referrer" />
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h2 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h2><p>首先下载稳定版</p>
+<p><a target="_blank" href="https://nodejs.org/dist/v9.11.1/node-v9.11.1-x64.msi" rel="external nofollow noreferrer noopener">下载 Node.js</a></p>
+<p>我这里给的是64位的。</p>
+<p>安装选项全部默认，一路点击<code>Next</code>。</p>
+<p>最后安装好之后，按<code>Win+R</code>打开命令提示符，输入<code>node -v</code>和<code>npm -v</code>，如果出现版本号，那么就安装成功了。</p>
+<h2 id="添加国内镜像源"><a href="#添加国内镜像源" class="headerlink" title="添加国内镜像源"></a>添加国内镜像源</h2><p>如果没有梯子的话，可以使用阿里的国内镜像进行加速。</p>
+<pre><code class="bash">npm config set registry https://registry.npm.taobao.org
+</code></pre>
+<h2 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h2><p>为了把本地的网页文件上传到 github 上面去，我们需要用到分布式版本控制工具————Git</p>
+<p><a target="_blank" href="https://git-scm.com/download/win" rel="external nofollow noreferrer noopener">下载 Git</a></p>
+<p>安装选项还是全部默认，只不过最后一步添加路径时选择<code>Use Git from the Windows Command Prompt</code>，这样我们就可以直接在命令提示符里打开git了。</p>
+<p>安装完成后在命令提示符中输入<code>git --version</code>验证是否安装成功。</p>
+<h2 id="注册-Github-账号"><a href="#注册-Github-账号" class="headerlink" title="注册 Github 账号"></a>注册 Github 账号</h2><p>接下来就去注册一个 github 账号，用来存放我们的网站。大多数小伙伴应该都有了吧，作为一个合格的程序猿（媛）还是要有一个的。</p>
+<p>打开 <a href="%5BGitHub%5D(https://github.com/)"> github </a>, 新建一个项目，输入自己的项目名字，README 初始化也要勾上。</p>
+<p>然后项目就建成了，点击<code>Settings</code>，向下拉到最后有个<code>GitHub Pages</code>，点击<code>Choose a theme</code>选择一个主题。然后等一会儿，再回到<code>GitHub Pages</code>，</p>
+<p>点击那个链接，就会出现自己的网页啦</p>
+<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>在合适的地方新建一个文件夹，用来存放自己的博客文件，比如我的博客文件都存放在<code>D:\study\program\blog</code>目录下。</p>
+<p>在该目录下右键点击<code>Git Bash Here</code>，打开 git 的控制台窗口，以后我们所有的操作都在 git 控制台进行，就不要用 Windows 自带的控制台了。</p>
+<p>定位到该目录下，输入<code>npm i hexo-cli -g</code> 安装 Hexo。会有几个报错，无视它就行。</p>
+<p>安装完后输入<code>hexo -v</code>验证是否安装成功。</p>
+<p>然后就要初始化我们的网站，输入<code>hexo init</code>初始化文件夹，接着输入<code>npm install</code>安装必备的组件。</p>
+<p>这样本地的网站配置也弄好啦，输入<code>hexo g</code>生成静态网页，然后输入<code>hexo s</code>打开本地服务器，然后浏览器打开 <a href="https://link.zhihu.com/?target=http://localhost:4000/" rel="external nofollow noreferrer">http://localhost:4000/</a>，就可以看到我们的博客啦</p>
+<p>按<code>ctrl+c</code>关闭本地服务器。</p>
+<p>官网： <a target="_blank" href="https://hexo.io/zh-cn/docs/" rel="external nofollow noreferrer noopener">https://hexo.io/zh-cn/docs/</a></p>
+<h2 id="连接-Github-与本地"><a href="#连接-Github-与本地" class="headerlink" title="连接 Github 与本地"></a>连接 Github 与本地</h2><p>首先右键打开 git bash，然后输入下面命令：</p>
+<pre><code class="bash">git config --global user.name &quot;alwayscn&quot;
 git config --global user.email &quot;123@yeah.net&quot;
-</code></pre><p>用户名和邮箱根据你注册 github 的信息自行修改。</p><p>然后生成密钥 SSH key：</p><pre><code class="bash">ssh-keygen -t rsa -C &quot;123@yeah.net&quot;
-</code></pre><p>打开 <a href="https://github.com/">github</a>，在头像下面点击<code>settings</code>，再点击<code>SSH and GPG keys</code>，新建一个SSH，名字随便。</p><p>git bash 中输入</p><pre><code class="bash">cat ~/.ssh/id_rsa.pub
-</code></pre><p>将输出的内容复制到框中，点击确定保存。</p><p>输入<code>ssh -T git@github.com</code>，如果如下图所示，出现你的用户名，那就成功了。</p><p>打开博客根目录下的<code>_config.yml</code>文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。</p><p>修改配置：</p><pre><code class="bash"># URL
+</code></pre>
+<p>用户名和邮箱根据你注册 github 的信息自行修改。</p>
+<p>然后生成密钥 SSH key：</p>
+<pre><code class="bash">ssh-keygen -t rsa -C &quot;123@yeah.net&quot;
+</code></pre>
+<p>打开 <a href="https://github.com/">github</a>，在头像下面点击<code>settings</code>，再点击<code>SSH and GPG keys</code>，新建一个SSH，名字随便。</p>
+<p>git bash 中输入</p>
+<pre><code class="bash">cat ~/.ssh/id_rsa.pub
+</code></pre>
+<p>将输出的内容复制到框中，点击确定保存。</p>
+<p>输入<code>ssh -T git@github.com</code>，如果如下图所示，出现你的用户名，那就成功了。</p>
+<p>打开博客根目录下的<code>_config.yml</code>文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。</p>
+<p>修改配置：</p>
+<pre><code class="bash"># URL
 ## If your site is put in a subdirectory, set url as &#39;http://yoursite.com/child&#39; and root as &#39;/child/&#39;
 url: https://alwayscn.github.io/alwaysblog/
 root: /
@@ -19,4 +214,693 @@ deploy:
   type: git 
   repository: git@github.com:alwayscn/alwaysblog.git
   branch: main
-</code></pre><p>repository 修改为你自己的 github 项目地址。</p><h2 id="写文章、发布文章"><a href="#写文章、发布文章" class="headerlink" title="写文章、发布文章"></a>写文章、发布文章</h2><p>首先在博客根目录下右键打开 git bash，安装一个扩展<code>npm i hexo-deployer-git</code>。</p><p>然后输入<code>hexo new post &quot;article title&quot;</code>，新建一篇文章。</p><p>然后打开<code>D:\study\program\blog\source\_posts</code>的目录，可以发现下面多了一个文件夹和一个<code>.md</code>文件，一个用来存放你的图片等数据，另一个就是你的文章文件啦。</p><p>编写完 markdown 文件后，根目录下输入<code>hexo g</code>生成静态网页，然后输入<code>hexo s</code>可以本地预览效果，最后输入<code>hexo d</code>上传到 github 上。这时打开你的主页就能看到发布的文章啦。</p><h2 id="备份博客源文件"><a href="#备份博客源文件" class="headerlink" title="备份博客源文件"></a>备份博客源文件</h2><p>有时候我们想换一台电脑继续写博客，这时候就可以将博客目录下的所有源文件都上传到 github 上面。</p><p>首先在 github 博客仓库下新建一个分支<code>hexo</code>，然后<code>git clone</code>到本地，把<code>.git</code>文件夹拿出来，放在博客根目录下。</p><p>然后<code>git branch -b hexo</code>切换到<code>hexo</code>分支，然后<code>git add .</code>，然后<code>git commit -m &quot;xxx&quot;</code>，最后<code>git push origin hexo</code>提交就行了。</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2022-01-28</span><i class="fa fa-tag"></i><a class="tag" href="/alwaysblog/categories/博客搭建/" title="博客搭建">博客搭建 </a><a class="tag" href="/alwaysblog/tags/github/" title="github">github </a><a class="tag" href="/alwaysblog/tags/hexo/" title="hexo">hexo </a><a class="tag" href="/alwaysblog/tags/github-博客/" title="github 博客">github 博客 </a><span class="leancloud_visitors"></span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://github.com/alwayscn/alwaysblog/post/1613536721/,张小剩的博客,github + hexo 搭建个人博客,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/alwaysblog/post/2482852438/" title="头脑风暴">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/alwaysblog/post/1759737362/" title="时光余热">下一篇</a></li></ul></div><script src="/alwaysblog/js/visitors.js"></script><a id="comments"></a><div id="vcomments" style="margin:0 30px"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//cdn.jsdelivr.net/gh/xcss/valine@latest/dist/Valine.min.js"></script><script>var valine=new Valine({el:"#vcomments",notify:!1,verify:!1,app_id:"",app_key:"",placeholder:"念念不忘，必有回响...",path:window.location.pathname,serverURLs:"",visitor:!0,recordIP:!0,avatar:"mp"})</script></div></div></div></div><script src="/alwaysblog/js/jquery-migrate-1.2.1.min.js"></script><script src="/alwaysblog/js/jquery.appear.js"></script><script src="/alwaysblog/js/add-bookmark.js"></script><script src="/alwaysblog/js/baidu-tongji.js"></script></body></html>
+</code></pre>
+<p>repository 修改为你自己的 github 项目地址。</p>
+<h2 id="写文章、发布文章"><a href="#写文章、发布文章" class="headerlink" title="写文章、发布文章"></a>写文章、发布文章</h2><p>首先在博客根目录下右键打开 git bash，安装一个扩展<code>npm i hexo-deployer-git</code>。</p>
+<p>然后输入<code>hexo new post &quot;article title&quot;</code>，新建一篇文章。</p>
+<p>然后打开<code>D:\study\program\blog\source\_posts</code>的目录，可以发现下面多了一个文件夹和一个<code>.md</code>文件，一个用来存放你的图片等数据，另一个就是你的文章文件啦。</p>
+<p>编写完 markdown 文件后，根目录下输入<code>hexo g</code>生成静态网页，然后输入<code>hexo s</code>可以本地预览效果，最后输入<code>hexo d</code>上传到 github 上。这时打开你的主页就能看到发布的文章啦。</p>
+<h2 id="备份博客源文件"><a href="#备份博客源文件" class="headerlink" title="备份博客源文件"></a>备份博客源文件</h2><p>有时候我们想换一台电脑继续写博客，这时候就可以将博客目录下的所有源文件都上传到 github 上面。</p>
+<p>首先在 github 博客仓库下新建一个分支<code>hexo</code>，然后<code>git clone</code>到本地，把<code>.git</code>文件夹拿出来，放在博客根目录下。</p>
+<p>然后<code>git branch -b hexo</code>切换到<code>hexo</code>分支，然后<code>git add .</code>，然后<code>git commit -m &quot;xxx&quot;</code>，最后<code>git push origin hexo</code>提交就行了。</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <div id="post-tag">
+              
+                <span>
+                  <i class="iconfont icon-inbox"></i>
+                  
+                    <a class="hover-with-bg" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA">博客搭建</a>
+                    &nbsp;
+                  
+                </span>
+              
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/github">github</a>
+                
+                  <a class="hover-with-bg" href="/tags/hexo">hexo</a>
+                
+                  <a class="hover-with-bg" href="/tags/github%20%E5%8D%9A%E5%AE%A2">github 博客</a>
+                
+              </span>
+            </div>
+            
+              <div id="post-note">
+                <div><strong>本文作者：</strong><a href="/alwaysblog/">张小剩</a></div>
+                <div><strong>本文链接：</strong><a href="https://github.com/alwayscn/alwaysblog/post/1613536721/">https://github.com/alwayscn/alwaysblog/post/1613536721/</a></div>
+                <div><strong>版权声明：</strong>本站文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh" rel="nofollow noopener noopener">CC BY-NC-SA 3.0 CN</a> 协议进行许可</div>
+              </div>
+            
+            
+              <div id="post-nav" class="container">
+                  <div class="row">
+                    
+                      <a href="/alwaysblog/post/2482852438/" id="post-nav-prev" class="col">
+                        <i class="fas fa-arrow-left"></i>
+                        <span class="post-nav-title">头脑风暴</span>
+                      </a>
+                    
+                    
+                      <a href="/alwaysblog/post/1759737362/" id="post-nav-next" class="col">
+                        <span class="post-nav-title">时光余热</span>
+                        <i class="fas fa-arrow-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+            
+          </div>
+        </div>
+
+        <!-- custom -->
+        
+
+        <!-- Comments -->
+        <div class="col-lg-10 mx-auto nopadding-md">
+          <div class="comments mx-auto" id="comments">
+            
+             <br><br>
+              
+              
+  <style type="text/css">
+    .v[data-class=v] .vcontent > p > a:not(.at) {
+      overflow-wrap: anywhere;
+      display: inline;
+    }
+  </style>
+  <div id="vcomments" style="margin: 0 auto;"></div>
+  <script defer src="//cdn.jsdelivr.net/npm/@waline/client@latest/dist/Waline.min.js"></script>
+<!--   <script defer src="//unpkg.zhimg.com/@waline/client@latest/dist/Waline.min.js"></script> -->
+  <script>
+    var notify = 'true' == true ? true : false;
+    var verify = 'true' == true ? true : false;
+    var oldLoad = window.onload;
+    window.onload = function () {
+      // 设置自定义文字
+      const locale = {
+        placeholder: "说点什么吧quq",
+        uploading: "上传中...默认图床在境内可能无法访问"
+      };
+      Waline({
+        el: '#vcomments',
+        serverURL: "https://blog-waline-m0eiqctad-alwayscn.vercel.app/",
+        avatar: "mp",
+        avatarCDN: "https://gravatar.loli.net/avatar/",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10",
+        // 设置 emoji
+        emoji: [
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus',
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo',
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
+        ],
+        // 设置自定义文字
+        locale,
+
+        // 图片上传函数
+         uploadImage: false
+        // uploadImage: function (file) {
+        // return smms(file)
+        //         }
+      });
+      oldLoad && oldLoad();
+      // smms 图床，Authorization 的位置为 smms 图床的 token（可选）
+      function smms(file) {
+        const formData = new FormData();
+        formData.append('smfile', file);
+        formData.append('format', 'json');
+        let data = fetch('https://smms.pvq.workers.dev/upload', {
+          method: 'POST',
+          mode: 'cors',
+          headers: new Headers({
+            'Authorization': 'FNnpntzeJnw1SQc61jL6Tt1UZPzmhLBT'
+          }),
+          body: formData
+        }).then(
+          res => res.json()
+        ).then(function(response) {
+          const checkUrl = new RegExp('^[a-zA-z]+://[^\s]*');
+          let url = response.code == 'image_repeated' ? response.images : (response.data.url ? response.data.url : '');
+          // 若 smms 图床调用失败则转发请求到遇见图床
+          return checkUrl.test(url) ? url : hualigs(file);
+        }).catch(function(error) {
+          // smms 图床调用失败，尝试遇见图床
+          return hualigs(file);
+        });
+        return data;
+      }
+      // 遇见图床
+      function hualigs(file){
+        const formData = new FormData();
+        formData.append('image', file);
+        formData.append('privateStorage', 'backblaze');
+        formData.append('apiType', 'catbox');
+        formData.append('token', '146faa57355f01c8eed8a045eda6a684');
+        return fetch('//www.hualigs.cn/api/upload', {
+          method: 'POST',
+          mode: 'cors',
+          body: formData
+        }).then(
+          res => res.json()
+        ).then(function(response) {
+          const checkUrl = new RegExp('^[a-zA-z]+://[^\s]*');
+          let backblaze = response.data.url.private.backblaze;
+          let catbox = 'https://avatar.75cdn.workers.dev/?url=' + encodeURIComponent(response.data.url.catbox);
+          return checkUrl.test(backblaze) ? backblaze : catbox
+        });
+      }
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://waline.js.org" rel="nofollow noopener noopener">comments
+      powered by Waline.</a></noscript>
+
+
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+<!--     <div class="d-none d-lg-block col-lg-2 toc-container"> -->
+    <div id="toc-container" class="d-none d-lg-block col-lg-2 ">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+    <div class="catalog-close" onclick="close_show(0)">关闭</div>
+    <div id="post-catalog-bar" onclick="close_show(1)" class="post-catalog-bar-left-minborder" style="left: 144px;">
+       <i class="far fa-book-open" style="font-size: 10px"></i> 目 录
+    </div>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    
+  </main>
+  
+<div id="sidebar" class="sidebar-hide">
+  <span class="sidebar-button sidebar-button-shift" id="toggle-sidebar" >
+    <i class="fa fa-arrow-right on" aria-hidden="true"></i>
+  </span>
+  <div class="sidebar-overlay"></div>
+  <div class="sidebar-intrude">
+    <div class="sidebar-avatar">
+      <img src="/alwaysblog/static/images/avatar.jpg" srcset="/alwaysblog/static/images/avatar.jpg" alt="avatar"/>
+    </div>
+    <div class="text-center sidebar-about">
+      <p class="h3 sidebar-author">张小剩</p>
+      <p class="sidebar-subtitle">One two one ... <script type='text/javascript'>console.log('博主认证: https://bbs.liyuans.com')</script></p>
+      
+        <a href="https://github.com/alwayscn" class="h4" target="_blank">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+        <a href="https://www.yuque.com/extime/blog" class="h4" target="_blank">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+        <a href="https://www.cnblogs.com/wehome" class="h4" target="_blank">
+          <i class="fab fa-blog" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+        <a href="mailto:zhangxy.cn@gmail.com" class="h4" target="_blank">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+    </div>
+    <div class="sidebar-friend">
+<!--       <p class="h6 sidebar-friend-title"> -->
+<!--         <span class="sidebar-label-left"><i class="fas fa-user-friends"></i></span> -->
+<!--         <span class="sidebar-label">友情链接</span> -->
+<!--       </p> -->
+      <ul class="list-group">
+        
+          <a href="https://console.leancloud.app/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              LeanCloud
+            </li>
+          </a>
+        
+          <a href="https://vercel.com/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              Vercel
+            </li>
+          </a>
+        
+          <a href="https://hitokoto.cn/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              一言
+            </li>
+          </a>
+        
+          <a href="https://zty.pe/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              打字游戏
+            </li>
+          </a>
+        
+          <a href="https://flipanim.com/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              在线涂鸦
+            </li>
+          </a>
+        
+          <a href="http://gogoame.sumbioun.com/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              Gogoame (午後雨)
+            </li>
+          </a>
+        
+          <a href="https://hin.cool/c/dd.html" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              减压滑碟
+            </li>
+          </a>
+        
+          <a href="https://www.jq22.com/yanshi4710" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              元素周期
+            </li>
+          </a>
+        
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div id="footerContent"  class="rgba-black-slight">
+<footer>
+  <div class="footer-plane">
+      <div class="blog_music">
+        <script src="//music.clwl.online/Player/player.min.js" id="SinKingMusic" key="765"></script>
+      </div>
+      <div class="footer-container">
+
+        <div class="footer-left">
+            <div>
+            <!-- 版权信息 -->
+            
+            <div class="footer-info">
+                
+                  Copyright © 2023&nbsp;张小剩.Powered by
+                 <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener noreferrer">
+                  Fluid
+                 </a>
+                
+            </div>
+            
+            <!-- 备案信息 -->
+            
+            </div>
+
+        </div>
+        <div class="footer-details footer-right">
+            <div>
+                
+                <div class="footer-aside-box">
+                    <i class="fa fa-cog fa-spin"></i>
+                    <span id="span">本站已稳定运行: 128天11小时56分5秒</span>
+                    <script type="text/javascript">
+                        function runtime() {
+                            // 初始时间，日/月/年 时:分:秒
+                            // X = new Date("09/27/2021 07:21:00");
+                            console.log("12/12/2021 07:21:00")
+                            X = new Date("12/12/2021 07:21:00");
+                            Y = new Date();
+                            T = (Y.getTime() - X.getTime());
+                            M = 24 * 60 * 60 * 1000;
+                            a = T / M;
+                            A = Math.floor(a);
+                            b = (a - A) * 24;
+                            B = Math.floor(b);
+                            c = (b - B) * 60;
+                            C = Math.floor((b - B) * 60);
+                            D = Math.floor((c - C) * 60);
+                            //信息写入到DIV中
+                            span.innerHTML = "本站已稳定运行: " + A + " 天" + B + " 小时" + C + " 分" + D
+                             + " 秒"
+                        }
+
+                        setInterval(runtime, 1000);
+                    </script>
+                </div>
+                
+
+                
+            </div>
+      </div>
+      </div>
+      <!-- 一言 -->
+      
+          <div class="footer-hitokoto">
+            <a id="hitokotoa" href="#" target="_blank" rel="nofollow noopener noreferrer">
+              <span id="hitokoto"></span>
+            </a>
+          </div>
+      
+  </div>
+</footer>
+</div>
+<!-- SCRIPTS -->
+<script src="/alwaysblog/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+<script src="https://cdn.staticfile.org/mdbootstrap/4.8.7/js/mdb.min.js" ></script>
+<script src="/alwaysblog/js/main.js" ></script>
+
+  <script src="/alwaysblog/js/lazyload.js" ></script>
+
+
+  
+    <script src="https://cdn.staticfile.org/tocbot/4.8.1/tocbot.min.js" ></script>
+  
+  <script src="/alwaysblog/js/post.js" ></script>
+
+<!-- Plugins -->
+
+  <script src="/alwaysblog/lib/prettify/prettify.min.js" ></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/typed.js/2.0.9/typed.min.js" ></script>
+  <script type="text/javascript">
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "github + hexo 搭建个人博客&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/anchor-js/4.2.0/anchor.min.js" ></script>
+  <script type="text/javascript">
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+  <script src="/alwaysblog/js/local-search.js" ></script>
+  <script type="text/javascript">
+    var path = "/alwaysblog/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script type="text/javascript">
+  /* Fancybox */
+  var setupFancybox = function () {
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(function() {
+    var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      $(this).wrap(element);
+    });
+  };
+  setupFancybox();
+  </script>
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+              processEscapes: true,
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          }
+      });
+
+      MathJax.Hub.Queue(function() {
+          var all = MathJax.Hub.getAllJax(), i;
+          for(i=0; i < all.length; i += 1) {
+              all[i].SourceElement().parentNode.className += ' has-jax';
+          }
+      });
+
+    </script>
+
+    <script src="https://cdn.staticfile.org/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML" ></script>
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+  /*一言API*/
+  $(document).ready(function(){getHitokoto();});
+  function hitokoto(e) {
+    $("#hitokoto").stop().fadeOut(function() {
+      $("#hitokoto").html(e.hitokoto);
+      var element = document.getElementById('hitokotoa');
+      element.href = "https://hitokoto.cn/?uuid=" + e.uuid;
+      $("#hitokoto").stop().fadeIn();
+    })
+  };
+  function getHitokoto() {
+    var e = ["a", "b", "c", "d", "e", "i"];
+    fetch('https://v1.hitokoto.cn/?encode=json&charset=utf-8&c=' + e[Math.floor(Math.random() * e.length)], {cache: 'no-cache', method: 'GET', mode: 'cors'}).then(response => response.json()).then(data => {
+      hitokoto(data);
+      setTimeout(getHitokoto, 1e4);
+    }).catch(console.error)
+  };
+  </script>
+
+
+
+
+<!-- Functions -->
+<script type="text/javascript">
+  /* 切换背景 */
+  
+  $("#background").removeClass("banner-bg");
+  $("body").addClass("banner-bg");
+  var postToTopHight = $("#board").offset().top;
+  $(window).scroll(function () {
+    var bgDisplay = false;
+    var scrollHeight = document.body.scrollTop + document.documentElement.scrollTop;
+    bgDisplay = scrollHeight >= postToTopHight;
+    if(bgDisplay) {
+      $('#background').removeClass("rgba-black-slight");
+      $('#mainContent').removeClass("rgba-black-slight");
+      $('#footerContent').removeClass("rgba-black-slight");
+    } else {
+      $('#background').addClass("rgba-black-slight");
+      $('#mainContent').addClass("rgba-black-slight");
+      $('#footerContent').addClass("rgba-black-slight");
+    }
+  });
+  
+</script>
+
+  <script type="text/javascript">
+    /*显示博客运行时间*/
+    var blogRunTime = function () {
+      var runTime = document.getElementById("runtime");
+      var runtimeDate = "12/12/2021 07:21:00";
+	    var createDate = new Date(runtimeDate);
+	    var nowDate = new Date();
+	    var dateLine = nowDate.getTime() - createDate.getTime();
+	    var runDate = Math.floor(dateLine / (1000 * 60 * 60 * 24));
+	    runTime.innerHTML = runDate;
+    };
+    $(document).ready(function(){
+	    blogRunTime();
+    });
+  </script>
+
+
+  <script type="text/javascript">
+    /*窗口监视*/
+    var originalTitle = document.title;
+    window.onblur = function(){document.title = "你不爱我了QAQ"};
+    window.onfocus = function(){document.title = originalTitle};
+  </script>
+
+
+  <script type="text/javascript">
+    /* 雪花效果 */
+    console.log('雪花效果 code by kvv.me');
+    ~function () {
+      function t() {
+          e.width = window.innerWidth,
+          e.height = window.innerHeight,
+          o = Math.round(window.innerWidth * window.innerHeight / 1e4)
+      }
+      function n() {
+          var t = window.innerWidth
+            , d = window.innerHeight
+            , c = e.getContext("2d");
+          c.clearRect(0, 0, t, d),
+          c.fillStyle = "rgba(255, 255, 255, 0.7)",
+          c.beginPath(),
+          a += .01;
+          for (var u = 0; o > u; u++) {
+            var l = r[u];
+            if (!l) {
+              continue
+            }
+            ;c.moveTo(l.x, l.y),
+            c.arc(l.x, l.y, l.radius, 0, 2 * Math.PI, !0),
+            l.y += Math.cos(a) + l.radius / 2,
+            l.x += Math.sin(a * l.direction),
+            (l.x > t + 5 || -5 > l.x || l.y > d) && (u % 3 > 0 ? (r[u].x = Math.random() * t,
+            r[u].y = -10) : Math.sin(a * l.direction) > 0 ? (r[u].x = -5,
+            r[u].y = Math.random() * d) : (r[u].x = t + 5,
+            r[u].y = Math.random() * d))
+          }
+          c.fill(),
+          i(n)
+      }
+      var e = document.createElement("canvas")
+        , i = requestAnimationFrame || msRequestAnimationFrame || function(t) {
+          setTimeout(t, 16)
+        }
+      , a = 0
+      , o = 0
+      , r = [];
+      t(),
+      e.className = "snow",
+      document.body.appendChild(e);
+      for (var d = 0; o > d; d++)
+        r.push({
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            radius: 4 * Math.random() + 1,
+            direction: 2 * Math.random() - .5
+        });
+      addEventListener("resize", t),
+      i(n)
+    }();
+  </script>
+
+
+  <script type="text/javascript">
+    /* 评论自动跳转 */
+    var jumpComments = function(){
+      if(window.location.hash){
+        var hash_decode = decodeURI(window.location.hash);
+        if(!$(hash_decode).length){
+          var checkExist = setInterval(function() {
+            if ($(hash_decode).length) {
+              clearInterval(checkExist);
+              setTimeout(function(){
+                $('html, body').animate({scrollTop: $(hash_decode).offset().top-90}, 1000);
+              }, 1500);
+            }
+          }, 100);
+        }
+      }
+    }
+    $(document).ready(function(){
+	    jumpComments();
+    });
+  </script>
+
+ 
+ 
+ 
+ 
+
+<!-- cnzz -->
+<style type="text/css">#cnzz_stat_icon_1258664352{display: none;}</style>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258664352'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258664352' type='text/javascript'%3E%3C/script%3E"));</script>
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150991779-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "UA-150991779-1");
+</script>
+ 
+
+  
+</body>
+</html>

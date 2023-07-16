@@ -1,8 +1,955 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Core"><title>软件测试面试总结 · 张小剩的博客</title><meta name="description" content="第一家
-主要是做功能测试吗？
-在工作中用到些什么工具？
-印象比较深刻的项目？是一个人测试的吗？
-协助开发搭建环境，简单说一下是怎么做的？
-接口测试的话你是怎么做一个参数化的？接口测试里面有做过关联吗？用的是哪个元件？正则表达式提取器有用过吗？
-有没有遇到过印象深刻的 bug？
-项目有需求分析这个环节"><meta name="keywords" content="极限博客,极限Blog,博客,极限"><meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="stylesheet" href="/alwaysblog/css/style.css"><link rel="stylesheet" href="/alwaysblog/css/blog_basic.css"><link rel="stylesheet" href="/alwaysblog/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/alwaysblog/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/alwaysblog/images/logo@2x.png" style="width:127px"><h3><a href="/">张小剩的博客</a></h3><div class="description"><p>心之所愿，无事不成。<br>Nothing is impossible to a willing heart.</p></div></div></div><ul class="social-links"><li><a href="https://github.com/mrcore"><i class="fa fa-github"></i></a></li><li><a href="mailto:x@jixian.io"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="http://sighttp.qq.com/authd?IDKEY="><i class="fa fa-qq"></i></a></li><li><a target="_blank" rel="noopener" href="https://zhihu.com/people/"><i class="fa fa-mortar-board"></i></a></li></ul><div class="footer"><div class="p"><span>© 2017 - 2020 </span><i class="fa fa-star"></i><span> Core</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span>& </span><a href="https://github.com/mrcore/hexo-theme-Anatole-Core" target="_blank">Anatole-Core</a></div><div class="beian"><a href="http://www.beian.miit.gov.cn/" target="_blank">粤ICP备15011643号</a><span style="height:10px;margin-left:10px">|</span><img src="/alwaysblog/images/gongan.png" style="height:10px;margin-left:10px;position:relative;top:1px"><span style="margin-left:2px">粤公网安备 44030402003967号</span></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/guestbook">留言</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"></a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>软件测试面试总结</a></h3></div><div class="post-content"><h2 id="第一家"><a href="#第一家" class="headerlink" title="第一家"></a>第一家</h2><ol><li>主要是做功能测试吗？</li><li>在工作中用到些什么工具？</li><li>印象比较深刻的项目？是一个人测试的吗？</li><li>协助开发搭建环境，简单说一下是怎么做的？</li><li>接口测试的话你是怎么做一个参数化的？接口测试里面有做过关联吗？用的是哪个元件？正则表达式提取器有用过吗？</li><li>有没有遇到过印象深刻的 bug？</li><li>项目有需求分析这个环节吗？需求评审的时候，有没有总结过产品经常会漏掉些什么功能，需求文档会出现什么 bug，你有没有去总结一下？比如哪里的逆向的思维没有考虑到，数据显示有问题，没有换行这样子</li><li>有用 fiddler 抓包做测试吗？</li><li>你这个项目有做过性能测试吗？性能测试的基本流程是怎样的？</li><li>你不用去了解一下哪些地方需要做压测吗？哪些地方是有压力点的？</li><li>并发数我们要怎么确定呢？</li><li>你平时通过上面渠道去学 python？</li><li>python 主要数据类型有哪些？</li><li>假如有一个预约口罩的功能，</li></ol><ul><li>每天只能预约一次；</li><li>每天晚上 8 点公布前一天的预约结果；</li><li>每次预约时需要提交一个表单，表格里包括身手机号，身份证号等信息。你针对这个来说一说有哪些测试点。越多越好</li></ul><p><strong>预约次数，是否准时公布结果，公布结果是否正确，表单是否必填，手机号长度、号段、特殊字符，身份证长度，末尾最后一项，提交按钮是否正常响应，预约信息是否添加数据库，预约人数限制，预约地区限制，预约条件、身份认证</strong></p><ol start="15"><li>SQL 注入</li></ol><h2 id="第二家"><a href="#第二家" class="headerlink" title="第二家"></a>第二家</h2><ol><li>左连接和右连接的区别？</li><li>什么情况下使用索引？</li><li>索引有哪些？</li><li>不同索引的使用场景？</li><li>使用索引之后的查询速度比不使用索引的查询速度要快，是这样吗？</li><li>什么时候使用索引会查询的快？</li><li>工作中有遇到过哪些让你有成就感的事情，可以说个两三件吗？</li><li>说说你在开发或者测试工作中遇到过哪些困难？</li><li>你平时的测试是点点点还是借助某些工具去测试还是说纯写测试脚本代码的？</li><li>比如你一个 OA 系统里面功能比较多，你是通过手工快速去点还是用什么方式去快速完成这个测试工作？</li></ol><ul><li>如果是新功能开发的测试阶段，肯定是需要点点点</li><li>如果是老功能做回归测试，则需要做自动化测试</li></ul><ol><li>个人规划是怎么样的？</li><li>你们公司主要有哪些功能模块？</li><li>对加班和出差怎么看？</li></ol><h2 id="第三家"><a href="#第三家" class="headerlink" title="第三家"></a>第三家</h2><ol><li>上家公司做什么的？</li><li>上家公司的测试流程？</li><li>用例评审是哪些人员参与的？</li><li>常见的状态码？</li><li>fiddler 的原理？能抓 https 的包吗？</li></ol><ul><li>Fiddler 是位于客户端和服务器端的 HTTP 代理，能够记录客户端和服务器之间的所有 HTTP 请求，可以针对特定的 HTTP 请求，分析或修改请求数据，也可以修改服务器返回的数据。</li></ul><ol><li>http 和 https 的区别？</li><li>一般用到什么方法来写测试用例？</li><li>怎么区分 bug 是前端还是后端？</li><li>可以用 loaderrunner 做什么？</li><li>怎么用 jmeter 来做测试的？</li><li>你可以说说 jmeter 里的进程和线程吗？</li><li>jmeter 里怎么看报错的？</li><li>你说说聚合报告是个什么东西？</li><li>性能测试的流程？</li><li>实际没有达到预想的性能测试指标值，你怎么办？有哪些因素可能会造成这样？</li><li>你说一些 linux 命令，chmod 命令是干嘛的？怎么查看端口被占用？</li><li>你以前的工作中的 jenkins 起到什么作用？</li><li>py 中 init 方法和 new 方法有什么作用？</li><li>怎么定位网页上的元素的？</li><li>有没有用过 django 框架？</li><li>你知道深拷贝和浅拷贝的区别吗？</li><li>你知道什么是装饰器吗？</li><li>git 是干嘛的？git 和 svn 有什么区别？</li><li>一张表里有很多数据，为什么查询张三这个数据很慢？索引的本质或者原理是什么？</li><li>一个测试需要具备什么素质？</li><li>你自身的优势在哪里？</li><li>说一下 cookies 和 session，token。服务器是怎么知道你这个登录的用户是哪个用户？</li></ol><h2 id="（正式面试）"><a href="#（正式面试）" class="headerlink" title="（正式面试）"></a>（正式面试）</h2><ul><li><p>网络协议怎么理解</p></li><li><p>http 和 https 的区别</p></li><li><p>tcp/ip 协议</p></li><li><p>html css js 在页面中充当什么角色</p></li><li><p>html css js 各会出现什么样的 bug</p></li><li><p>测试流程</p></li><li><p>你平常用 linux 做什么操作</p></li><li><p>怎么搭建环境</p></li><li><p>怎么自动化搭建环境</p></li><li><p>怎么做自动化接口测试</p></li><li><p>你在项目中做的接口测试的占比</p></li><li><p>平常你们的项目是怎么开展的</p></li><li><p>你在迭代过程中的每个时间段都做什么？</p></li><li><p>怎么和同事分享你所知道的新的技术</p></li><li><p>上级给你一个方案，但是你有更好的解决方案，你会怎么做？</p></li></ul></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-06-20</span><i class="fa fa-tag"></i><a class="tag" href="/alwaysblog/categories/软件测试/" title="软件测试">软件测试 </a><a class="tag" href="/alwaysblog/tags/软件测试/" title="软件测试">软件测试 </a><span class="leancloud_visitors"></span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://github.com/alwayscn/alwaysblog/post/108766007/,张小剩的博客,软件测试面试总结,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/alwaysblog/post/2030954057/" title="adb 常用命令">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/alwaysblog/post/2734300636/" title="软件测试面试">下一篇</a></li></ul></div><script src="/alwaysblog/js/visitors.js"></script><a id="comments"></a><div id="vcomments" style="margin:0 30px"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//cdn.jsdelivr.net/gh/xcss/valine@latest/dist/Valine.min.js"></script><script>var valine=new Valine({el:"#vcomments",notify:!1,verify:!1,app_id:"",app_key:"",placeholder:"念念不忘，必有回响...",path:window.location.pathname,serverURLs:"",visitor:!0,recordIP:!0,avatar:"mp"})</script></div></div></div></div><script src="/alwaysblog/js/jquery-migrate-1.2.1.min.js"></script><script src="/alwaysblog/js/jquery.appear.js"></script><script src="/alwaysblog/js/add-bookmark.js"></script><script src="/alwaysblog/js/baidu-tongji.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/alwaysblog/favicon_1.ico">
+  <link rel="icon" type="image/png" href="/alwaysblog/favicon_1.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="author" content="张小剩">
+  
+    <meta name="description" content="折腾是一种乐趣，求知是一种追求！">
+  
+  
+    <meta name="keywords" content="软件测试," />
+  
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <title>软件测试面试总结 - 张小剩的博客</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.10.0/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.8.7/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+  <link rel="stylesheet" href="/alwaysblog/lib/prettify/tranquil-heart.min.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"  >
+
+<link rel="stylesheet" href="/alwaysblog/css/main.css"  >
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+  <style type="text/css">
+    .banner-bg {
+      
+        background-image: url('/alwaysblog/static/images/wallhaven-8opx8k.jpg');
+      
+      background-position: center;
+      background-repeat: repeat-y;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  </style>
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/alwaysblog/atom.xml" title="张小剩的博客" type="application/atom+xml">
+</head>
+
+<body class="banner-bg">
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/alwaysblog/">&nbsp;<strong>张小剩的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/">主页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/links/">友链</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/about/">关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2 rgba-black-slight" id="background">
+      <div class="full-bg-img">
+        <div class="mask flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+            
+              <br>
+              <p class="mt-3">
+                <i class="far fa-calendar-alt"></i>
+                <span class="post-date">2020-06-20&nbsp;|&nbsp;</span>
+                <i class="far fa-chart-bar"></i>
+                <span class="post-count">1.3k</span>字&nbsp;|&nbsp;
+                <i class="far fa-clock"></i>
+                <span class="post-count">4</span>分钟
+                
+              </p>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="mainContent" class="rgba-black-slight">
+    
+      
+<meta name="referrer" content="no-referrer" />
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h2 id="第一家"><a href="#第一家" class="headerlink" title="第一家"></a>第一家</h2><ol>
+<li>主要是做功能测试吗？</li>
+<li>在工作中用到些什么工具？</li>
+<li>印象比较深刻的项目？是一个人测试的吗？</li>
+<li>协助开发搭建环境，简单说一下是怎么做的？</li>
+<li>接口测试的话你是怎么做一个参数化的？接口测试里面有做过关联吗？用的是哪个元件？正则表达式提取器有用过吗？</li>
+<li>有没有遇到过印象深刻的 bug？</li>
+<li>项目有需求分析这个环节吗？需求评审的时候，有没有总结过产品经常会漏掉些什么功能，需求文档会出现什么 bug，你有没有去总结一下？比如哪里的逆向的思维没有考虑到，数据显示有问题，没有换行这样子</li>
+<li>有用 fiddler 抓包做测试吗？</li>
+<li> 你这个项目有做过性能测试吗？性能测试的基本流程是怎样的？</li>
+<li>你不用去了解一下哪些地方需要做压测吗？哪些地方是有压力点的？</li>
+<li>并发数我们要怎么确定呢？</li>
+<li>你平时通过上面渠道去学 python？</li>
+<li>python 主要数据类型有哪些？</li>
+<li>假如有一个预约口罩的功能，</li>
+</ol>
+<ul>
+<li>每天只能预约一次；</li>
+<li>每天晚上 8 点公布前一天的预约结果；</li>
+<li>每次预约时需要提交一个表单，表格里包括身手机号，身份证号等信息。你针对这个来说一说有哪些测试点。越多越好</li>
+</ul>
+<p> <strong>预约次数，是否准时公布结果，公布结果是否正确，表单是否必填，手机号长度、号段、特殊字符，身份证长度，末尾最后一项，提交按钮是否正常响应，预约信息是否添加数据库，预约人数限制，预约地区限制，预约条件、身份认证</strong></p>
+<ol start="15">
+<li> SQL 注入</li>
+</ol>
+<h2 id="第二家"><a href="#第二家" class="headerlink" title="第二家"></a>第二家</h2><ol>
+<li>左连接和右连接的区别？</li>
+<li>什么情况下使用索引？</li>
+<li>索引有哪些？</li>
+<li>不同索引的使用场景？</li>
+<li>使用索引之后的查询速度比不使用索引的查询速度要快，是这样吗？</li>
+<li>什么时候使用索引会查询的快？</li>
+<li>工作中有遇到过哪些让你有成就感的事情，可以说个两三件吗？</li>
+<li>说说你在开发或者测试工作中遇到过哪些困难？</li>
+<li>你平时的测试是点点点还是借助某些工具去测试还是说纯写测试脚本代码的？</li>
+<li>比如你一个 OA 系统里面功能比较多，你是通过手工快速去点还是用什么方式去快速完成这个测试工作？</li>
+</ol>
+<ul>
+<li>如果是新功能开发的测试阶段，肯定是需要点点点</li>
+<li>如果是老功能做回归测试，则需要做自动化测试</li>
+</ul>
+<ol>
+<li> 个人规划是怎么样的？</li>
+<li> 你们公司主要有哪些功能模块？</li>
+<li> 对加班和出差怎么看？</li>
+</ol>
+<h2 id="第三家"><a href="#第三家" class="headerlink" title="第三家"></a>第三家</h2><ol>
+<li>上家公司做什么的？</li>
+<li>上家公司的测试流程？</li>
+<li>用例评审是哪些人员参与的？</li>
+<li>常见的状态码？</li>
+<li>fiddler 的原理？能抓 https 的包吗？</li>
+</ol>
+<ul>
+<li>Fiddler 是位于客户端和服务器端的 HTTP 代理，能够记录客户端和服务器之间的所有 HTTP 请求，可以针对特定的 HTTP 请求，分析或修改请求数据，也可以修改服务器返回的数据。</li>
+</ul>
+<ol>
+<li>http 和 https 的区别？</li>
+<li>一般用到什么方法来写测试用例？</li>
+<li>怎么区分 bug 是前端还是后端？</li>
+<li>可以用 loaderrunner 做什么？</li>
+<li>怎么用 jmeter 来做测试的？</li>
+<li>你可以说说 jmeter 里的进程和线程吗？</li>
+<li>jmeter 里怎么看报错的？</li>
+<li>你说说聚合报告是个什么东西？</li>
+<li>性能测试的流程？</li>
+<li>实际没有达到预想的性能测试指标值，你怎么办？有哪些因素可能会造成这样？</li>
+<li>你说一些 linux 命令，chmod 命令是干嘛的？怎么查看端口被占用？</li>
+<li>你以前的工作中的 jenkins 起到什么作用？</li>
+<li>py 中 init 方法和 new 方法有什么作用？</li>
+<li>怎么定位网页上的元素的？</li>
+<li>有没有用过 django 框架？</li>
+<li>你知道深拷贝和浅拷贝的区别吗？</li>
+<li>你知道什么是装饰器吗？</li>
+<li>git 是干嘛的？git 和 svn 有什么区别？</li>
+<li>一张表里有很多数据，为什么查询张三这个数据很慢？索引的本质或者原理是什么？</li>
+<li>一个测试需要具备什么素质？</li>
+<li>你自身的优势在哪里？</li>
+<li>说一下 cookies 和 session，token。服务器是怎么知道你这个登录的用户是哪个用户？</li>
+</ol>
+<h2 id="（正式面试）"><a href="#（正式面试）" class="headerlink" title="（正式面试）"></a>（正式面试）</h2><ul>
+<li><p>网络协议怎么理解</p>
+</li>
+<li><p>http 和 https 的区别</p>
+</li>
+<li><p>tcp/ip 协议</p>
+</li>
+<li><p>html css js 在页面中充当什么角色</p>
+</li>
+<li><p>html css js 各会出现什么样的 bug</p>
+</li>
+<li><p>测试流程</p>
+</li>
+<li><p>你平常用 linux 做什么操作</p>
+</li>
+<li><p>怎么搭建环境</p>
+</li>
+<li><p>怎么自动化搭建环境</p>
+</li>
+<li><p>怎么做自动化接口测试</p>
+</li>
+<li><p>你在项目中做的接口测试的占比</p>
+</li>
+<li><p>平常你们的项目是怎么开展的</p>
+</li>
+<li><p>你在迭代过程中的每个时间段都做什么？</p>
+</li>
+<li><p>怎么和同事分享你所知道的新的技术</p>
+</li>
+<li><p>上级给你一个方案，但是你有更好的解决方案，你会怎么做？</p>
+</li>
+</ul>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <div id="post-tag">
+              
+                <span>
+                  <i class="iconfont icon-inbox"></i>
+                  
+                    <a class="hover-with-bg" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95">软件测试</a>
+                    &nbsp;
+                  
+                </span>
+              
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95">软件测试</a>
+                
+              </span>
+            </div>
+            
+              <div id="post-note">
+                <div><strong>本文作者：</strong><a href="/alwaysblog/">张小剩</a></div>
+                <div><strong>本文链接：</strong><a href="https://github.com/alwayscn/alwaysblog/post/108766007/">https://github.com/alwayscn/alwaysblog/post/108766007/</a></div>
+                <div><strong>版权声明：</strong>本站文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh" rel="nofollow noopener noopener">CC BY-NC-SA 3.0 CN</a> 协议进行许可</div>
+              </div>
+            
+            
+              <div id="post-nav" class="container">
+                  <div class="row">
+                    
+                      <a href="/alwaysblog/post/2030954057/" id="post-nav-prev" class="col">
+                        <i class="fas fa-arrow-left"></i>
+                        <span class="post-nav-title">adb 常用命令</span>
+                      </a>
+                    
+                    
+                      <a href="/alwaysblog/post/2734300636/" id="post-nav-next" class="col">
+                        <span class="post-nav-title">软件测试面试</span>
+                        <i class="fas fa-arrow-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+            
+          </div>
+        </div>
+
+        <!-- custom -->
+        
+
+        <!-- Comments -->
+        <div class="col-lg-10 mx-auto nopadding-md">
+          <div class="comments mx-auto" id="comments">
+            
+             <br><br>
+              
+              
+  <style type="text/css">
+    .v[data-class=v] .vcontent > p > a:not(.at) {
+      overflow-wrap: anywhere;
+      display: inline;
+    }
+  </style>
+  <div id="vcomments" style="margin: 0 auto;"></div>
+  <script defer src="//cdn.jsdelivr.net/npm/@waline/client@latest/dist/Waline.min.js"></script>
+<!--   <script defer src="//unpkg.zhimg.com/@waline/client@latest/dist/Waline.min.js"></script> -->
+  <script>
+    var notify = 'true' == true ? true : false;
+    var verify = 'true' == true ? true : false;
+    var oldLoad = window.onload;
+    window.onload = function () {
+      // 设置自定义文字
+      const locale = {
+        placeholder: "说点什么吧quq",
+        uploading: "上传中...默认图床在境内可能无法访问"
+      };
+      Waline({
+        el: '#vcomments',
+        serverURL: "https://blog-waline-m0eiqctad-alwayscn.vercel.app/",
+        avatar: "mp",
+        avatarCDN: "https://gravatar.loli.net/avatar/",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10",
+        // 设置 emoji
+        emoji: [
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus',
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo',
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
+        ],
+        // 设置自定义文字
+        locale,
+
+        // 图片上传函数
+         uploadImage: false
+        // uploadImage: function (file) {
+        // return smms(file)
+        //         }
+      });
+      oldLoad && oldLoad();
+      // smms 图床，Authorization 的位置为 smms 图床的 token（可选）
+      function smms(file) {
+        const formData = new FormData();
+        formData.append('smfile', file);
+        formData.append('format', 'json');
+        let data = fetch('https://smms.pvq.workers.dev/upload', {
+          method: 'POST',
+          mode: 'cors',
+          headers: new Headers({
+            'Authorization': 'FNnpntzeJnw1SQc61jL6Tt1UZPzmhLBT'
+          }),
+          body: formData
+        }).then(
+          res => res.json()
+        ).then(function(response) {
+          const checkUrl = new RegExp('^[a-zA-z]+://[^\s]*');
+          let url = response.code == 'image_repeated' ? response.images : (response.data.url ? response.data.url : '');
+          // 若 smms 图床调用失败则转发请求到遇见图床
+          return checkUrl.test(url) ? url : hualigs(file);
+        }).catch(function(error) {
+          // smms 图床调用失败，尝试遇见图床
+          return hualigs(file);
+        });
+        return data;
+      }
+      // 遇见图床
+      function hualigs(file){
+        const formData = new FormData();
+        formData.append('image', file);
+        formData.append('privateStorage', 'backblaze');
+        formData.append('apiType', 'catbox');
+        formData.append('token', '146faa57355f01c8eed8a045eda6a684');
+        return fetch('//www.hualigs.cn/api/upload', {
+          method: 'POST',
+          mode: 'cors',
+          body: formData
+        }).then(
+          res => res.json()
+        ).then(function(response) {
+          const checkUrl = new RegExp('^[a-zA-z]+://[^\s]*');
+          let backblaze = response.data.url.private.backblaze;
+          let catbox = 'https://avatar.75cdn.workers.dev/?url=' + encodeURIComponent(response.data.url.catbox);
+          return checkUrl.test(backblaze) ? backblaze : catbox
+        });
+      }
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://waline.js.org" rel="nofollow noopener noopener">comments
+      powered by Waline.</a></noscript>
+
+
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+<!--     <div class="d-none d-lg-block col-lg-2 toc-container"> -->
+    <div id="toc-container" class="d-none d-lg-block col-lg-2 ">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+    <div class="catalog-close" onclick="close_show(0)">关闭</div>
+    <div id="post-catalog-bar" onclick="close_show(1)" class="post-catalog-bar-left-minborder" style="left: 144px;">
+       <i class="far fa-book-open" style="font-size: 10px"></i> 目 录
+    </div>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    
+  </main>
+  
+<div id="sidebar" class="sidebar-hide">
+  <span class="sidebar-button sidebar-button-shift" id="toggle-sidebar" >
+    <i class="fa fa-arrow-right on" aria-hidden="true"></i>
+  </span>
+  <div class="sidebar-overlay"></div>
+  <div class="sidebar-intrude">
+    <div class="sidebar-avatar">
+      <img src="/alwaysblog/static/images/avatar.jpg" srcset="/alwaysblog/static/images/avatar.jpg" alt="avatar"/>
+    </div>
+    <div class="text-center sidebar-about">
+      <p class="h3 sidebar-author">张小剩</p>
+      <p class="sidebar-subtitle">One two one ... <script type='text/javascript'>console.log('博主认证: https://bbs.liyuans.com')</script></p>
+      
+        <a href="https://github.com/alwayscn" class="h4" target="_blank">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+        <a href="https://www.yuque.com/extime/blog" class="h4" target="_blank">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+        <a href="https://www.cnblogs.com/wehome" class="h4" target="_blank">
+          <i class="fab fa-blog" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+        <a href="mailto:zhangxy.cn@gmail.com" class="h4" target="_blank">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+    </div>
+    <div class="sidebar-friend">
+<!--       <p class="h6 sidebar-friend-title"> -->
+<!--         <span class="sidebar-label-left"><i class="fas fa-user-friends"></i></span> -->
+<!--         <span class="sidebar-label">友情链接</span> -->
+<!--       </p> -->
+      <ul class="list-group">
+        
+          <a href="https://console.leancloud.app/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              LeanCloud
+            </li>
+          </a>
+        
+          <a href="https://vercel.com/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              Vercel
+            </li>
+          </a>
+        
+          <a href="https://hitokoto.cn/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              一言
+            </li>
+          </a>
+        
+          <a href="https://zty.pe/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              打字游戏
+            </li>
+          </a>
+        
+          <a href="https://flipanim.com/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              在线涂鸦
+            </li>
+          </a>
+        
+          <a href="http://gogoame.sumbioun.com/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              Gogoame (午後雨)
+            </li>
+          </a>
+        
+          <a href="https://hin.cool/c/dd.html" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              减压滑碟
+            </li>
+          </a>
+        
+          <a href="https://www.jq22.com/yanshi4710" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              元素周期
+            </li>
+          </a>
+        
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div id="footerContent"  class="rgba-black-slight">
+<footer>
+  <div class="footer-plane">
+      <div class="blog_music">
+        <script src="//music.clwl.online/Player/player.min.js" id="SinKingMusic" key="765"></script>
+      </div>
+      <div class="footer-container">
+
+        <div class="footer-left">
+            <div>
+            <!-- 版权信息 -->
+            
+            <div class="footer-info">
+                
+                  Copyright © 2023&nbsp;张小剩.Powered by
+                 <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener noreferrer">
+                  Fluid
+                 </a>
+                
+            </div>
+            
+            <!-- 备案信息 -->
+            
+            </div>
+
+        </div>
+        <div class="footer-details footer-right">
+            <div>
+                
+                <div class="footer-aside-box">
+                    <i class="fa fa-cog fa-spin"></i>
+                    <span id="span">本站已稳定运行: 128天11小时56分5秒</span>
+                    <script type="text/javascript">
+                        function runtime() {
+                            // 初始时间，日/月/年 时:分:秒
+                            // X = new Date("09/27/2021 07:21:00");
+                            console.log("12/12/2021 07:21:00")
+                            X = new Date("12/12/2021 07:21:00");
+                            Y = new Date();
+                            T = (Y.getTime() - X.getTime());
+                            M = 24 * 60 * 60 * 1000;
+                            a = T / M;
+                            A = Math.floor(a);
+                            b = (a - A) * 24;
+                            B = Math.floor(b);
+                            c = (b - B) * 60;
+                            C = Math.floor((b - B) * 60);
+                            D = Math.floor((c - C) * 60);
+                            //信息写入到DIV中
+                            span.innerHTML = "本站已稳定运行: " + A + " 天" + B + " 小时" + C + " 分" + D
+                             + " 秒"
+                        }
+
+                        setInterval(runtime, 1000);
+                    </script>
+                </div>
+                
+
+                
+            </div>
+      </div>
+      </div>
+      <!-- 一言 -->
+      
+          <div class="footer-hitokoto">
+            <a id="hitokotoa" href="#" target="_blank" rel="nofollow noopener noreferrer">
+              <span id="hitokoto"></span>
+            </a>
+          </div>
+      
+  </div>
+</footer>
+</div>
+<!-- SCRIPTS -->
+<script src="/alwaysblog/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+<script src="https://cdn.staticfile.org/mdbootstrap/4.8.7/js/mdb.min.js" ></script>
+<script src="/alwaysblog/js/main.js" ></script>
+
+  <script src="/alwaysblog/js/lazyload.js" ></script>
+
+
+  
+    <script src="https://cdn.staticfile.org/tocbot/4.8.1/tocbot.min.js" ></script>
+  
+  <script src="/alwaysblog/js/post.js" ></script>
+
+<!-- Plugins -->
+
+  <script src="/alwaysblog/lib/prettify/prettify.min.js" ></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/typed.js/2.0.9/typed.min.js" ></script>
+  <script type="text/javascript">
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "软件测试面试总结&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/anchor-js/4.2.0/anchor.min.js" ></script>
+  <script type="text/javascript">
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+  <script src="/alwaysblog/js/local-search.js" ></script>
+  <script type="text/javascript">
+    var path = "/alwaysblog/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script type="text/javascript">
+  /* Fancybox */
+  var setupFancybox = function () {
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(function() {
+    var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      $(this).wrap(element);
+    });
+  };
+  setupFancybox();
+  </script>
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+              processEscapes: true,
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          }
+      });
+
+      MathJax.Hub.Queue(function() {
+          var all = MathJax.Hub.getAllJax(), i;
+          for(i=0; i < all.length; i += 1) {
+              all[i].SourceElement().parentNode.className += ' has-jax';
+          }
+      });
+
+    </script>
+
+    <script src="https://cdn.staticfile.org/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML" ></script>
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+  /*一言API*/
+  $(document).ready(function(){getHitokoto();});
+  function hitokoto(e) {
+    $("#hitokoto").stop().fadeOut(function() {
+      $("#hitokoto").html(e.hitokoto);
+      var element = document.getElementById('hitokotoa');
+      element.href = "https://hitokoto.cn/?uuid=" + e.uuid;
+      $("#hitokoto").stop().fadeIn();
+    })
+  };
+  function getHitokoto() {
+    var e = ["a", "b", "c", "d", "e", "i"];
+    fetch('https://v1.hitokoto.cn/?encode=json&charset=utf-8&c=' + e[Math.floor(Math.random() * e.length)], {cache: 'no-cache', method: 'GET', mode: 'cors'}).then(response => response.json()).then(data => {
+      hitokoto(data);
+      setTimeout(getHitokoto, 1e4);
+    }).catch(console.error)
+  };
+  </script>
+
+
+
+
+<!-- Functions -->
+<script type="text/javascript">
+  /* 切换背景 */
+  
+  $("#background").removeClass("banner-bg");
+  $("body").addClass("banner-bg");
+  var postToTopHight = $("#board").offset().top;
+  $(window).scroll(function () {
+    var bgDisplay = false;
+    var scrollHeight = document.body.scrollTop + document.documentElement.scrollTop;
+    bgDisplay = scrollHeight >= postToTopHight;
+    if(bgDisplay) {
+      $('#background').removeClass("rgba-black-slight");
+      $('#mainContent').removeClass("rgba-black-slight");
+      $('#footerContent').removeClass("rgba-black-slight");
+    } else {
+      $('#background').addClass("rgba-black-slight");
+      $('#mainContent').addClass("rgba-black-slight");
+      $('#footerContent').addClass("rgba-black-slight");
+    }
+  });
+  
+</script>
+
+  <script type="text/javascript">
+    /*显示博客运行时间*/
+    var blogRunTime = function () {
+      var runTime = document.getElementById("runtime");
+      var runtimeDate = "12/12/2021 07:21:00";
+	    var createDate = new Date(runtimeDate);
+	    var nowDate = new Date();
+	    var dateLine = nowDate.getTime() - createDate.getTime();
+	    var runDate = Math.floor(dateLine / (1000 * 60 * 60 * 24));
+	    runTime.innerHTML = runDate;
+    };
+    $(document).ready(function(){
+	    blogRunTime();
+    });
+  </script>
+
+
+  <script type="text/javascript">
+    /*窗口监视*/
+    var originalTitle = document.title;
+    window.onblur = function(){document.title = "你不爱我了QAQ"};
+    window.onfocus = function(){document.title = originalTitle};
+  </script>
+
+
+  <script type="text/javascript">
+    /* 雪花效果 */
+    console.log('雪花效果 code by kvv.me');
+    ~function () {
+      function t() {
+          e.width = window.innerWidth,
+          e.height = window.innerHeight,
+          o = Math.round(window.innerWidth * window.innerHeight / 1e4)
+      }
+      function n() {
+          var t = window.innerWidth
+            , d = window.innerHeight
+            , c = e.getContext("2d");
+          c.clearRect(0, 0, t, d),
+          c.fillStyle = "rgba(255, 255, 255, 0.7)",
+          c.beginPath(),
+          a += .01;
+          for (var u = 0; o > u; u++) {
+            var l = r[u];
+            if (!l) {
+              continue
+            }
+            ;c.moveTo(l.x, l.y),
+            c.arc(l.x, l.y, l.radius, 0, 2 * Math.PI, !0),
+            l.y += Math.cos(a) + l.radius / 2,
+            l.x += Math.sin(a * l.direction),
+            (l.x > t + 5 || -5 > l.x || l.y > d) && (u % 3 > 0 ? (r[u].x = Math.random() * t,
+            r[u].y = -10) : Math.sin(a * l.direction) > 0 ? (r[u].x = -5,
+            r[u].y = Math.random() * d) : (r[u].x = t + 5,
+            r[u].y = Math.random() * d))
+          }
+          c.fill(),
+          i(n)
+      }
+      var e = document.createElement("canvas")
+        , i = requestAnimationFrame || msRequestAnimationFrame || function(t) {
+          setTimeout(t, 16)
+        }
+      , a = 0
+      , o = 0
+      , r = [];
+      t(),
+      e.className = "snow",
+      document.body.appendChild(e);
+      for (var d = 0; o > d; d++)
+        r.push({
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            radius: 4 * Math.random() + 1,
+            direction: 2 * Math.random() - .5
+        });
+      addEventListener("resize", t),
+      i(n)
+    }();
+  </script>
+
+
+  <script type="text/javascript">
+    /* 评论自动跳转 */
+    var jumpComments = function(){
+      if(window.location.hash){
+        var hash_decode = decodeURI(window.location.hash);
+        if(!$(hash_decode).length){
+          var checkExist = setInterval(function() {
+            if ($(hash_decode).length) {
+              clearInterval(checkExist);
+              setTimeout(function(){
+                $('html, body').animate({scrollTop: $(hash_decode).offset().top-90}, 1000);
+              }, 1500);
+            }
+          }, 100);
+        }
+      }
+    }
+    $(document).ready(function(){
+	    jumpComments();
+    });
+  </script>
+
+ 
+ 
+ 
+ 
+
+<!-- cnzz -->
+<style type="text/css">#cnzz_stat_icon_1258664352{display: none;}</style>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258664352'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258664352' type='text/javascript'%3E%3C/script%3E"));</script>
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150991779-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "UA-150991779-1");
+</script>
+ 
+
+  
+</body>
+</html>

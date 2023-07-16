@@ -1,23 +1,194 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Core"><title>shell 编程 · 张小剩的博客</title><meta name="description" content="shell 实例
-echo 用于向窗口输出文本```shell#!/bin/bash
+<!DOCTYPE html>
+<html lang="zh-CN">
 
-echo “时光静好，岁月安然！”
 
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/alwaysblog/favicon_1.ico">
+  <link rel="icon" type="image/png" href="/alwaysblog/favicon_1.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="author" content="张小剩">
+  
+    <meta name="description" content="折腾是一种乐趣，求知是一种追求！">
+  
+  
+    <meta name="keywords" content="shell," />
+  
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <title>shell 编程 - 张小剩的博客</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.10.0/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.8.7/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+  <link rel="stylesheet" href="/alwaysblog/lib/prettify/tranquil-heart.min.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"  >
+
+<link rel="stylesheet" href="/alwaysblog/css/main.css"  >
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+  <style type="text/css">
+    .banner-bg {
+      
+        background-image: url('/alwaysblog/static/images/wallhaven-8opx8k.jpg');
+      
+      background-position: center;
+      background-repeat: repeat-y;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  </style>
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/alwaysblog/atom.xml" title="张小剩的博客" type="application/atom+xml">
+</head>
+
+<body class="banner-bg">
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/alwaysblog/">&nbsp;<strong>张小剩的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/">主页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/links/">友链</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/alwaysblog/about/">关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2 rgba-black-slight" id="background">
+      <div class="full-bg-img">
+        <div class="mask flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+            
+              <br>
+              <p class="mt-3">
+                <i class="far fa-calendar-alt"></i>
+                <span class="post-date">2021-11-02&nbsp;|&nbsp;</span>
+                <i class="far fa-chart-bar"></i>
+                <span class="post-count">5.8k</span>字&nbsp;|&nbsp;
+                <i class="far fa-clock"></i>
+                <span class="post-count">24</span>分钟
+                
+              </p>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="mainContent" class="rgba-black-slight">
+    
+      
+<meta name="referrer" content="no-referrer" />
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h2 id="shell-实例"><a href="#shell-实例" class="headerlink" title="shell 实例"></a>shell 实例</h2><ul>
+<li>echo 用于向窗口输出文本<br>```shell<br>#!/bin/bash</li>
+</ul>
+<p>echo “时光静好，岁月安然！”</p>
+<pre><code>
 - 脚本运行
 ```shell
 $ ./test.sh
 
 $  sh test.sh
-
-变量[ 变量名的命名规则 ]
-
-命名只能使用英文字母，数字和下划线，首个字符不能以数字"><meta name="keywords" content="极限博客,极限Blog,博客,极限"><meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="stylesheet" href="/alwaysblog/css/style.css"><link rel="stylesheet" href="/alwaysblog/css/blog_basic.css"><link rel="stylesheet" href="/alwaysblog/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/alwaysblog/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/alwaysblog/images/logo@2x.png" style="width:127px"><h3><a href="/">张小剩的博客</a></h3><div class="description"><p>心之所愿，无事不成。<br>Nothing is impossible to a willing heart.</p></div></div></div><ul class="social-links"><li><a href="https://github.com/mrcore"><i class="fa fa-github"></i></a></li><li><a href="mailto:x@jixian.io"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="http://sighttp.qq.com/authd?IDKEY="><i class="fa fa-qq"></i></a></li><li><a target="_blank" rel="noopener" href="https://zhihu.com/people/"><i class="fa fa-mortar-board"></i></a></li></ul><div class="footer"><div class="p"><span>© 2017 - 2020 </span><i class="fa fa-star"></i><span> Core</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span>& </span><a href="https://github.com/mrcore/hexo-theme-Anatole-Core" target="_blank">Anatole-Core</a></div><div class="beian"><a href="http://www.beian.miit.gov.cn/" target="_blank">粤ICP备15011643号</a><span style="height:10px;margin-left:10px">|</span><img src="/alwaysblog/images/gongan.png" style="height:10px;margin-left:10px;position:relative;top:1px"><span style="margin-left:2px">粤公网安备 44030402003967号</span></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/guestbook">留言</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"></a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>shell 编程</a></h3></div><div class="post-content"><h2 id="shell-实例"><a href="#shell-实例" class="headerlink" title="shell 实例"></a>shell 实例</h2><ul><li>echo 用于向窗口输出文本<br>```shell<br>#!/bin/bash</li></ul><p>echo “时光静好，岁月安然！”</p><pre><code>
-- 脚本运行
-```shell
-$ ./test.sh
-
-$  sh test.sh
-</code></pre><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>[ <strong>变量名的命名规则</strong> ]</p><ol><li>命名只能使用英文字母，数字和下划线，首个字符不能以数字开头</li><li>中间不能有空格，可以使用下划线（_）</li><li>不能使用标点符号</li><li>不能使用bash里的关键字（可用help命令查看保留关键字）</li></ol><ul><li><strong>变量赋值</strong><br>```shell<br>#!/bin/bash</li></ul><p>string=”从前冬天冷呀 夏天雨呀水呀 秋天远处传来你声音暖呀暖呀”</p><h1 id="使用变量"><a href="#使用变量" class="headerlink" title="使用变量"></a>使用变量</h1><p>echo ${string}</p><h1 id="语句给变量赋值-将-etc-下目录的文件名循环出来。将文件名-赋值给-file"><a href="#语句给变量赋值-将-etc-下目录的文件名循环出来。将文件名-赋值给-file" class="headerlink" title="语句给变量赋值 (将 /etc 下目录的文件名循环出来。将文件名 赋值给 file)"></a>语句给变量赋值 (将 /etc 下目录的文件名循环出来。将文件名 赋值给 file)</h1><p>for file in <code>ls /etc</code> 或 for file in $(ls /etc)<br>do<br>echo “文件： ${file}”<br>done</p><pre><code>
+</code></pre>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>[ <strong>变量名的命名规则</strong> ]</p>
+<ol>
+<li>命名只能使用英文字母，数字和下划线，首个字符不能以数字开头</li>
+<li>中间不能有空格，可以使用下划线（_）</li>
+<li>不能使用标点符号</li>
+<li>不能使用bash里的关键字（可用help命令查看保留关键字）</li>
+</ol>
+<ul>
+<li><strong>变量赋值</strong><br>```shell<br>#!/bin/bash</li>
+</ul>
+<p>string=”从前冬天冷呀 夏天雨呀水呀 秋天远处传来你声音暖呀暖呀”</p>
+<h1 id="使用变量"><a href="#使用变量" class="headerlink" title="使用变量"></a>使用变量</h1><p>echo ${string}</p>
+<h1 id="语句给变量赋值-将-etc-下目录的文件名循环出来。将文件名-赋值给-file"><a href="#语句给变量赋值-将-etc-下目录的文件名循环出来。将文件名-赋值给-file" class="headerlink" title="语句给变量赋值 (将 /etc 下目录的文件名循环出来。将文件名 赋值给 file)"></a>语句给变量赋值 (将 /etc 下目录的文件名循环出来。将文件名 赋值给 file)</h1><p>for file in <code>ls /etc</code> 或 for file in $(ls /etc)<br>    do<br>    echo “文件： ${file}”<br>    done</p>
+<pre><code>
 - **只读变量( readonly  )**
 ```shell
 #!/bin/bash
@@ -29,7 +200,13 @@ base_url=&quot;www.google.com&quot;
 
 # 运行脚本，结果如下：
     /bin/bash: NAME: This variable is read only.
-</code></pre><ul><li><strong>删除变量（unset ）</strong><br>```shell<br>#!/bin/bash</li></ul><p>variable_name=”System”<br>unset variable_name</p><p>echo ${variable_name} # 没有任何输出</p><pre><code>
+</code></pre>
+<ul>
+<li><strong>删除变量（unset ）</strong><br>```shell<br>#!/bin/bash</li>
+</ul>
+<p>variable_name=”System”<br>unset variable_name</p>
+<p>echo ${variable_name}  # 没有任何输出</p>
+<pre><code>
 - **变量类型**
 ```shell
 1) 局部变量: 局部变量在脚本或命令中定义，仅在当前 shell 实例中有效，其他 shell 启动的程序不能访问局部变量。
@@ -37,8 +214,16 @@ base_url=&quot;www.google.com&quot;
 2) 环境变量: 所有的程序，包括 shell 启动的程序，都能访问环境变量，有些程序需要环境变量来保证其正常运行。必要的时候 shell 脚本也可以定义环境变量。
 
 3) shell 变量: shell 变量是由 shell 程序设置的特殊变量。shell 变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了 shell 的正常运行
-</code></pre><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul><li>字符串可以用单引号，也可以用双引号，也可以不用引号<br>```shell<br>#!/bin/bash</li></ul><h1 id="单引号"><a href="#单引号" class="headerlink" title="单引号"></a>单引号</h1><p>str=’this is a string’<br>单引号字符串的限制：<br>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；<br>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</p><h1 id="双引号"><a href="#双引号" class="headerlink" title="双引号"></a>双引号</h1><p>_name=’system’<br>str=”Hello, I know you are &quot;${_name}&quot;! \n”<br>echo -e ${str}</p><h1 id="输出结果为："><a href="#输出结果为：" class="headerlink" title="输出结果为："></a>输出结果为：</h1><pre><code>Hello, I know you are &quot;runoob&quot;! 
-</code></pre><p>双引号的优点：<br>双引号里可以有变量<br>双引号里可以出现转义字符</p><pre><code>
+</code></pre>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul>
+<li>字符串可以用单引号，也可以用双引号，也可以不用引号<br>```shell<br>#!/bin/bash</li>
+</ul>
+<h1 id="单引号"><a href="#单引号" class="headerlink" title="单引号"></a>单引号</h1><p>str=’this is a string’<br>单引号字符串的限制：<br>    单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；<br>    单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</p>
+<h1 id="双引号"><a href="#双引号" class="headerlink" title="双引号"></a>双引号</h1><p>_name=’system’<br>str=”Hello, I know you are &quot;${_name}&quot;! \n”<br>echo -e ${str}</p>
+<h1 id="输出结果为："><a href="#输出结果为：" class="headerlink" title="输出结果为："></a>输出结果为：</h1><pre><code>Hello, I know you are &quot;runoob&quot;! 
+</code></pre>
+<p>双引号的优点：<br>    双引号里可以有变量<br>    双引号里可以出现转义字符</p>
+<pre><code>
 - **字符串拼接**
 ```shell
 #!/bin/bash
@@ -57,10 +242,29 @@ echo $greeting_2  $greeting_3
 # 输出结果
 hello, system ! hello, system !
 hello, system ! hello, $&#123;_name&#125; !   # 单引号字符串中存在变量，原样输出
-</code></pre><ul><li><strong>获取字符串长度</strong><pre><code class="shell">#!/bin/sh
+</code></pre>
+<ul>
+<li><strong>获取字符串长度</strong><pre><code class="shell">#!/bin/sh
 string=&quot;abcd&quot;
 echo $&#123;#string&#125; #输出 4
-</code></pre></li></ul><ul><li><strong>提取字符串</strong><br>```shell<br>#!/bin/sh<br>string=”从前冬天冷呀 夏天雨呀水呀 秋天远处传来你声音暖呀暖呀”</li></ul><p>echo ${string:0:6} # 输出 从前冬天冷呀(包含 0, 但不包含 6) 第一个字符的索引值为 0</p><p>注意：</p><ol><li>不支持负数切片</li><li>如果后一个数小于开始的数字，则该值表示向后延伸长度（如：${string:7:3} &gt;&gt; 夏天雨）</li><li>如果后一个数大于开始的数字，则该值表示向后延伸位置（如：${string:3:7} &gt;&gt; 天冷呀 夏天雨）<br>```</li></ol><ul><li><strong>查找字符串</strong><br>```shell<br>#!/bin/sh<br>string=”从前冬天冷呀 夏天雨呀水呀 秋天远处传来你声音暖呀暖呀”</li></ul><h1 id="查找字符-i-或-o-的位置-哪个字母先出现就计算哪个-："><a href="#查找字符-i-或-o-的位置-哪个字母先出现就计算哪个-：" class="headerlink" title="查找字符 i 或 o 的位置(哪个字母先出现就计算哪个)："></a>查找字符 i 或 o 的位置(哪个字母先出现就计算哪个)：</h1><p>echo <code>expr index &quot;$string&quot; 呀秋</code> # 输出 6（从 1 开始 ）</p><pre><code>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><strong>提取字符串</strong><br>```shell<br>#!/bin/sh<br>string=”从前冬天冷呀 夏天雨呀水呀 秋天远处传来你声音暖呀暖呀”</li>
+</ul>
+<p>echo ${string:0:6}  # 输出 从前冬天冷呀(包含 0, 但不包含 6)  第一个字符的索引值为 0</p>
+<p>注意： </p>
+<ol>
+<li>不支持负数切片</li>
+<li>如果后一个数小于开始的数字，则该值表示向后延伸长度（如：${string:7:3} &gt;&gt; 夏天雨）</li>
+<li>如果后一个数大于开始的数字，则该值表示向后延伸位置（如：${string:3:7} &gt;&gt; 天冷呀 夏天雨）<br>```</li>
+</ol>
+<ul>
+<li><strong>查找字符串</strong><br>```shell<br>#!/bin/sh<br>string=”从前冬天冷呀 夏天雨呀水呀 秋天远处传来你声音暖呀暖呀”</li>
+</ul>
+<h1 id="查找字符-i-或-o-的位置-哪个字母先出现就计算哪个-："><a href="#查找字符-i-或-o-的位置-哪个字母先出现就计算哪个-：" class="headerlink" title="查找字符 i 或 o 的位置(哪个字母先出现就计算哪个)："></a>查找字符 i 或 o 的位置(哪个字母先出现就计算哪个)：</h1><p>echo <code>expr index &quot;$string&quot; 呀秋</code> # 输出 6（从 1 开始 ）</p>
+<pre><code>
 
 ## shell 数组
 
@@ -77,7 +281,13 @@ array=(0 1 2 3 n)
 array_name[0]=value0
 array_name[1]=value1
 array_name[n]=valuen  # 可以不使用连续的下标，而且下标的范围没有限制
-</code></pre><ul><li><strong>读取数组</strong><br>```shell<br>#!/bin/bash<br>array=(0 1 2 3 “时光” “静好” (value0 value1 value2 value3) )</li></ul><p>echo ${array[0]}</p><h1 id="使用-或-符号可以获取数组中的所有元素"><a href="#使用-或-符号可以获取数组中的所有元素" class="headerlink" title="使用 @ 或 * 符号可以获取数组中的所有元素"></a>使用 @ 或 * 符号可以获取数组中的所有元素</h1><p>echo ${array[@]} # 输出： 0 1 2 3 时光 静好</p><pre><code>
+</code></pre>
+<ul>
+<li><strong>读取数组</strong><br>```shell<br>#!/bin/bash<br>array=(0 1 2 3 “时光” “静好” (value0 value1 value2 value3) )</li>
+</ul>
+<p>echo ${array[0]}</p>
+<h1 id="使用-或-符号可以获取数组中的所有元素"><a href="#使用-或-符号可以获取数组中的所有元素" class="headerlink" title="使用 @ 或 * 符号可以获取数组中的所有元素"></a>使用 @ 或 * 符号可以获取数组中的所有元素</h1><p>echo ${array[@]} # 输出： 0 1 2 3 时光 静好</p>
+<pre><code>
 - **获取数组的长度**
 ```shell
 #!/bin/bash
@@ -94,7 +304,13 @@ lengthn=$&#123;#array_name[n]&#125;
 
 lengthn=$&#123;#array_name[4]&#125;
 echo $&#123;lengthn&#125; # 2
-</code></pre><h2 id="shell-注释"><a href="#shell-注释" class="headerlink" title="shell 注释"></a>shell 注释</h2><ul><li>以 <strong>#</strong> 开头的行就是注释，会被解释器忽略<br>```shell<br>#!/bin/bash</li></ul><p>#——————————————–</p><h1 id="这是一个注释"><a href="#这是一个注释" class="headerlink" title="这是一个注释"></a>这是一个注释</h1><h1 id="author："><a href="#author：" class="headerlink" title="author："></a>author：</h1><h1 id="site："><a href="#site：" class="headerlink" title="site："></a>site：</h1><h1 id="slogan："><a href="#slogan：" class="headerlink" title="slogan："></a>slogan：</h1><p>#——————————————–</p><h5 id="用户配置区-开始"><a href="#用户配置区-开始" class="headerlink" title="用户配置区 开始"></a>用户配置区 开始</h5><h1><a href="#" class="headerlink"></a></h1><h1 id="-1"><a href="#-1" class="headerlink"></a></h1><h1 id="这里可以添加脚本描述信息"><a href="#这里可以添加脚本描述信息" class="headerlink" title="这里可以添加脚本描述信息"></a>这里可以添加脚本描述信息</h1><h1 id="-2"><a href="#-2" class="headerlink"></a></h1><h1 id="-3"><a href="#-3" class="headerlink"></a></h1><h5 id="用户配置区-结束"><a href="#用户配置区-结束" class="headerlink" title="用户配置区 结束"></a>用户配置区 结束</h5><pre><code>
+</code></pre>
+<h2 id="shell-注释"><a href="#shell-注释" class="headerlink" title="shell 注释"></a>shell 注释</h2><ul>
+<li>以 <strong>#</strong> 开头的行就是注释，会被解释器忽略<br>```shell<br>#!/bin/bash</li>
+</ul>
+<p>#——————————————–</p>
+<h1 id="这是一个注释"><a href="#这是一个注释" class="headerlink" title="这是一个注释"></a>这是一个注释</h1><h1 id="author："><a href="#author：" class="headerlink" title="author："></a>author：</h1><h1 id="site："><a href="#site：" class="headerlink" title="site："></a>site：</h1><h1 id="slogan："><a href="#slogan：" class="headerlink" title="slogan："></a>slogan：</h1><p>#——————————————–</p>
+<h5 id="用户配置区-开始"><a href="#用户配置区-开始" class="headerlink" title="用户配置区 开始"></a>用户配置区 开始</h5><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1><h1 id="这里可以添加脚本描述信息"><a href="#这里可以添加脚本描述信息" class="headerlink" title="这里可以添加脚本描述信息"></a>这里可以添加脚本描述信息</h1><h1 id="-2"><a href="#-2" class="headerlink" title=""></a></h1><h1 id="-3"><a href="#-3" class="headerlink" title=""></a></h1><h5 id="用户配置区-结束"><a href="#用户配置区-结束" class="headerlink" title="用户配置区 结束"></a>用户配置区 结束</h5><pre><code>
 - **多行注释**
 ```shell
 #!/bin/bash
@@ -118,7 +334,17 @@ EOF
 注释内容...
 注释内容...
 !
-</code></pre><h2 id="shell-传递参数"><a href="#shell-传递参数" class="headerlink" title="shell 传递参数"></a>shell 传递参数</h2><blockquote><p>在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：**$n<strong>。</strong>n** 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二个参数，以此类推……</p></blockquote><ul><li>实例<br>```shell<br>#!/bin/bash<h1 id="file-name-test-sh"><a href="#file-name-test-sh" class="headerlink" title="file_name = test.sh"></a>file_name = test.sh</h1><h1 id="以下实例我们向脚本传递三个参数，并分别输出，其中-0-为执行的文件名（包含文件路径）"><a href="#以下实例我们向脚本传递三个参数，并分别输出，其中-0-为执行的文件名（包含文件路径）" class="headerlink" title="以下实例我们向脚本传递三个参数，并分别输出，其中 $0 为执行的文件名（包含文件路径）"></a>以下实例我们向脚本传递三个参数，并分别输出，其中 $0 为执行的文件名（包含文件路径）</h1></li></ul><p>echo “Shell 传递参数实例！”;<br>echo “执行的文件名：$0”;<br>echo “第一个参数为：$1”;<br>echo “第二个参数为：$2”;<br>echo “第三个参数为：$3”;</p><h1 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h1><p>sh test.sh 1 2 3<br>Shell 传递参数实例！<br>执行的文件名：test.sh<br>第一个参数为：1<br>第二个参数为：2<br>第三个参数为：3</p><p>./test.sh 3 2 1<br>Shell 传递参数实例！<br>执行的文件名：./test.sh<br>第一个参数为：3<br>第二个参数为：2<br>第三个参数为：1</p><pre><code>| 参数处理 | 说明 |
+</code></pre>
+<h2 id="shell-传递参数"><a href="#shell-传递参数" class="headerlink" title="shell 传递参数"></a>shell 传递参数</h2><blockquote>
+<p>在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：**$n<strong>。</strong>n** 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二个参数，以此类推……</p>
+</blockquote>
+<ul>
+<li>实例<br>```shell<br>#!/bin/bash<h1 id="file-name-test-sh"><a href="#file-name-test-sh" class="headerlink" title="file_name = test.sh"></a>file_name = test.sh</h1><h1 id="以下实例我们向脚本传递三个参数，并分别输出，其中-0-为执行的文件名（包含文件路径）"><a href="#以下实例我们向脚本传递三个参数，并分别输出，其中-0-为执行的文件名（包含文件路径）" class="headerlink" title="以下实例我们向脚本传递三个参数，并分别输出，其中 $0 为执行的文件名（包含文件路径）"></a>以下实例我们向脚本传递三个参数，并分别输出，其中 $0 为执行的文件名（包含文件路径）</h1></li>
+</ul>
+<p>echo “Shell 传递参数实例！”;<br>echo “执行的文件名：$0”;<br>echo “第一个参数为：$1”;<br>echo “第二个参数为：$2”;<br>echo “第三个参数为：$3”;</p>
+<h1 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h1><p>sh test.sh 1 2 3<br>    Shell 传递参数实例！<br>    执行的文件名：test.sh<br>    第一个参数为：1<br>    第二个参数为：2<br>    第三个参数为：3</p>
+<p>./test.sh 3 2 1<br>    Shell 传递参数实例！<br>    执行的文件名：./test.sh<br>    第一个参数为：3<br>    第二个参数为：2<br>    第三个参数为：1</p>
+<pre><code>| 参数处理 | 说明 |
 | :--- | :--- |
 | $# | 传递到脚本的参数个数 |
 | $* | 以一个单字符串显示所有向脚本传递的参数。 如&quot;$*&quot;用「&quot;」括起来的情况、以&quot;$1 $2 … $n&quot;的形式输出所有参数。 |
@@ -132,7 +358,17 @@ EOF
 ```tex
 相同点：都是引用所有参数。
 不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 &quot; * &quot; 等价于 &quot;1 2 3&quot;（传递了一个参数），而 &quot;@&quot; 等价于 &quot;1&quot; &quot;2&quot; &quot;3&quot;（传递了三个参数）。
-</code></pre><h2 id="shell-运算符"><a href="#shell-运算符" class="headerlink" title="shell 运算符"></a>shell 运算符</h2><blockquote><p>shell 运算符包括 算术运算符、关系运算符、布尔运算符、字符串运算符、文件测试运算符<br>原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr，expr 最常用。<br>expr 是一款表达式计算工具，使用它能完成表达式的求值操作。</p></blockquote><ul><li>实例<br>```shell<br>#!/bin/bash</li></ul><p>val=<code>expr 5 + 5</code></p><h1 id="等价于"><a href="#等价于" class="headerlink" title="等价于"></a>等价于</h1><p>val=$[a+b]</p><p>echo ${val} # 10</p><pre><code>
+</code></pre>
+<h2 id="shell-运算符"><a href="#shell-运算符" class="headerlink" title="shell 运算符"></a>shell 运算符</h2><blockquote>
+<p>shell 运算符包括 算术运算符、关系运算符、布尔运算符、字符串运算符、文件测试运算符<br>原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr，expr 最常用。<br>expr 是一款表达式计算工具，使用它能完成表达式的求值操作。</p>
+</blockquote>
+<ul>
+<li>实例<br>```shell<br>#!/bin/bash</li>
+</ul>
+<p>val=<code>expr 5 + 5</code></p>
+<h1 id="等价于"><a href="#等价于" class="headerlink" title="等价于"></a>等价于</h1><p>val=$[a+b]</p>
+<p>echo ${val} # 10</p>
+<pre><code>
    - 表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样。
    - 完整的表达式要被 ”``“ 包含
 - **算术运算符**
@@ -171,7 +407,53 @@ if [ $a != $b ]
 then
   echo &quot;a 不等于 b&quot;
 fi
-</code></pre><ul><li><strong>关系运算符</strong><blockquote><p>关系运算符只支持数字，不支持字符串，除非字符串的值是数字。</p></blockquote></li></ul><table><thead><tr><th align="left">运算符</th><th align="left">说明（假定变量 a 为 10，变量 b 为 20）</th><th align="left">举例</th></tr></thead><tbody><tr><td align="left">-eq</td><td align="left">检测两个数是否相等，相等返回 true。</td><td align="left">[ $a -eq $b ] 返回 false。</td></tr><tr><td align="left">-ne</td><td align="left">检测两个数是否不相等，不相等返回 true。</td><td align="left">[ $a -ne $b ] 返回 true。</td></tr><tr><td align="left">-gt</td><td align="left">检测左边的数是否大于右边的，如果是，则返回 true。</td><td align="left">[ $a -gt $b ] 返回 false。</td></tr><tr><td align="left">-lt</td><td align="left">检测左边的数是否小于右边的，如果是，则返回 true。</td><td align="left">[ $a -lt $b ] 返回 true。</td></tr><tr><td align="left">-ge</td><td align="left">检测左边的数是否大于等于右边的，如果是，则返回 true。</td><td align="left">[ $a -ge $b ] 返回 false。</td></tr><tr><td align="left">-le</td><td align="left">检测左边的数是否小于等于右边的，如果是，则返回 true。</td><td align="left">[ $a -le $b ] 返回 true。</td></tr></tbody></table><pre><code class="shell">#!/bin/bash
+</code></pre>
+<ul>
+<li><strong>关系运算符</strong><blockquote>
+<p>关系运算符只支持数字，不支持字符串，除非字符串的值是数字。</p>
+</blockquote>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">说明（假定变量 a 为 10，变量 b 为 20）</th>
+<th align="left">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-eq</td>
+<td align="left">检测两个数是否相等，相等返回 true。</td>
+<td align="left">[ $a -eq $b ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-ne</td>
+<td align="left">检测两个数是否不相等，不相等返回 true。</td>
+<td align="left">[ $a -ne $b ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-gt</td>
+<td align="left">检测左边的数是否大于右边的，如果是，则返回 true。</td>
+<td align="left">[ $a -gt $b ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-lt</td>
+<td align="left">检测左边的数是否小于右边的，如果是，则返回 true。</td>
+<td align="left">[ $a -lt $b ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-ge</td>
+<td align="left">检测左边的数是否大于等于右边的，如果是，则返回 true。</td>
+<td align="left">[ $a -ge $b ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-le</td>
+<td align="left">检测左边的数是否小于等于右边的，如果是，则返回 true。</td>
+<td align="left">[ $a -le $b ] 返回 true。</td>
+</tr>
+</tbody></table>
+<pre><code class="shell">#!/bin/bash
 
 a=50
 b=20
@@ -183,7 +465,35 @@ then
 else 
   echo &quot;-eq : a 不等于 b&quot;
 fi
-</code></pre><ul><li><strong>布尔运算符</strong><table><thead><tr><th align="left">运算符</th><th align="left">说明（假定变量 a 为 10，变量 b 为 20）</th><th align="left">举例</th></tr></thead><tbody><tr><td align="left">!</td><td align="left">非运算，表达式为 true 则返回 false，否则返回 true。</td><td align="left">[ ! false ] 返回 true。</td></tr><tr><td align="left">-o</td><td align="left">或运算，有一个表达式为 true 则返回 true。</td><td align="left">[ $a -lt 20 -o $b -gt 100 ] 返回 true。</td></tr><tr><td align="left">-a</td><td align="left">与运算，两个表达式都为 true 才返回 true。</td><td align="left">[ $a -lt 20 -a $b -gt 100 ] 返回 false。</td></tr></tbody></table></li></ul><pre><code class="shell">#!/bin/bash
+</code></pre>
+<ul>
+<li><strong>布尔运算符</strong><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">说明（假定变量 a 为 10，变量 b 为 20）</th>
+<th align="left">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">!</td>
+<td align="left">非运算，表达式为 true 则返回 false，否则返回 true。</td>
+<td align="left">[ ! false ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-o</td>
+<td align="left">或运算，有一个表达式为 true 则返回 true。</td>
+<td align="left">[ $a -lt 20 -o $b -gt 100 ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-a</td>
+<td align="left">与运算，两个表达式都为 true 才返回 true。</td>
+<td align="left">[ $a -lt 20 -a $b -gt 100 ] 返回 false。</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<pre><code class="shell">#!/bin/bash
 
 a=50
 b=20
@@ -205,7 +515,30 @@ then
   echo &quot;a 大于 100 与 b小于50 返回 false &quot;
 else 
   echo &quot;条件不成立， 必须同时满足， a 大于 100， b 小于 50&quot;
-</code></pre><ul><li><strong>逻辑运算符</strong><table><thead><tr><th align="left">运算符</th><th align="left">说明（假定变量 a 为 10，变量 b 为 20）</th><th align="left">举例</th></tr></thead><tbody><tr><td align="left">&amp;&amp;</td><td align="left">逻辑的 AND</td><td align="left">[[ $a -lt 100 &amp;&amp; $b -gt 100 ]] 返回 false</td></tr><tr><td align="left">&#124;&#124;</td><td align="left">逻辑的 OR</td><td align="left">[[ $a -lt 100 &#124;&#124; $b -gt 100 ]] 返回 true</td></tr></tbody></table></li></ul><pre><code class="shell">#!/bin/bash
+</code></pre>
+<ul>
+<li><strong>逻辑运算符</strong><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">说明（假定变量 a 为 10，变量 b 为 20）</th>
+<th align="left">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&amp;&amp;</td>
+<td align="left">逻辑的 AND</td>
+<td align="left">[[ $a -lt 100 &amp;&amp; $b -gt 100 ]] 返回 false</td>
+</tr>
+<tr>
+<td align="left">&#124;&#124;</td>
+<td align="left">逻辑的 OR</td>
+<td align="left">[[ $a -lt 100 &#124;&#124; $b -gt 100 ]] 返回 true</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<pre><code class="shell">#!/bin/bash
 
 a=10
 b=20
@@ -223,7 +556,134 @@ then
 else 
   echo &quot;条件不成立, false， 必须同时满足， a 大于 100， b 小于 50&quot;
 fi
-</code></pre><ul><li><p><strong>字符串运算符</strong></p><table><thead><tr><th align="left">运算符</th><th align="left">说明（假定变量 a 为 “abc”，变量 b 为 “efg”）</th><th align="left">举例</th></tr></thead><tbody><tr><td align="left">=</td><td align="left">检测两个字符串是否相等，相等返回 true。</td><td align="left">[ $a = $b ] 返回 false。</td></tr><tr><td align="left">!=</td><td align="left">检测两个字符串是否相等，不相等返回 true。</td><td align="left">[ $a != $b ] 返回 true。</td></tr><tr><td align="left">-z</td><td align="left">检测字符串长度是否为0，为0返回 true。</td><td align="left">[ -z $a ] 返回 false。</td></tr><tr><td align="left">-n</td><td align="left">检测字符串长度是否不为 0，不为 0 返回 true。</td><td align="left">[ -n “$a” ] 返回 true。</td></tr><tr><td align="left">$</td><td align="left">检测字符串是否为空，不为空返回 true。</td><td align="left">[ $a ] 返回 true。</td></tr></tbody></table></li><li><p><strong>文件测试运算符</strong></p><blockquote><p>文件测试运算符用于检测 Unix 文件的各种属性。</p></blockquote></li></ul><table><thead><tr><th align="left">操作符</th><th align="left">说明</th><th align="left">举例</th></tr></thead><tbody><tr><td align="left">-b file</td><td align="left">检测文件是否是块设备文件，如果是，则返回 true。</td><td align="left">[ -b $file ] 返回 false。</td></tr><tr><td align="left">-c file</td><td align="left">检测文件是否是字符设备文件，如果是，则返回 true。</td><td align="left">[ -c $file ] 返回 false。</td></tr><tr><td align="left">-d file</td><td align="left">检测文件是否是目录，如果是，则返回 true。</td><td align="left">[ -d $file ] 返回 false。</td></tr><tr><td align="left">-f file</td><td align="left">检测文件是否是普通文件（既不是目录，也不是设备文件），如果是，则返回 true。</td><td align="left">[ -f $file ] 返回 true。</td></tr><tr><td align="left">-g file</td><td align="left">检测文件是否设置了 SGID 位，如果是，则返回 true。</td><td align="left">[ -g $file ] 返回 false。</td></tr><tr><td align="left">-k file</td><td align="left">检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true。</td><td align="left">[ -k $file ] 返回 false。</td></tr><tr><td align="left">-p file</td><td align="left">检测文件是否是有名管道，如果是，则返回 true。</td><td align="left">[ -p $file ] 返回 false。</td></tr><tr><td align="left">-u file</td><td align="left">检测文件是否设置了 SUID 位，如果是，则返回 true。</td><td align="left">[ -u $file ] 返回 false。</td></tr><tr><td align="left">-r file</td><td align="left">检测文件是否可读，如果是，则返回 true。</td><td align="left">[ -r $file ] 返回 true。</td></tr><tr><td align="left">-w file</td><td align="left">检测文件是否可写，如果是，则返回 true。</td><td align="left">[ -w $file ] 返回 true。</td></tr><tr><td align="left">-x file</td><td align="left">检测文件是否可执行，如果是，则返回 true。</td><td align="left">[ -x $file ] 返回 true。</td></tr><tr><td align="left">-s file</td><td align="left">检测文件是否为空（文件大小是否大于0），不为空返回 true。</td><td align="left">[ -s $file ] 返回 true。</td></tr><tr><td align="left">-e file</td><td align="left">检测文件（包括目录）是否存在，如果是，则返回 true。</td><td align="left">[ -e $file ] 返回 true。</td></tr></tbody></table><ul><li>其他检查符：<ul><li><strong>-S</strong>: 判断某文件是否 socket。</li><li><strong>-L</strong>: 检测文件是否存在并且是一个符号链接。<br>```shell<br>#!/bin/bash</li></ul></li></ul><p>file=”/tmp/exlog/test.sh”</p><p>if [ -d $file ]<br>then<br>echo “文件是个目录”<br>else<br>echo “文件不是个目录”<br>fi<br>if [ -r $file ]<br>then<br>echo “文件可读”<br>else<br>echo “文件不可读”<br>fi<br>if [ -w $file ]<br>then<br>echo “文件可写”<br>else<br>echo “文件不可写”<br>fi<br>if [ -x $file ]<br>then<br>echo “文件可执行”<br>else<br>echo “文件不可执行”<br>fi</p><pre><code>
+</code></pre>
+<ul>
+<li><p><strong>字符串运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">说明（假定变量 a 为 “abc”，变量 b 为 “efg”）</th>
+<th align="left">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">=</td>
+<td align="left">检测两个字符串是否相等，相等返回 true。</td>
+<td align="left">[ $a = $b ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">!=</td>
+<td align="left">检测两个字符串是否相等，不相等返回 true。</td>
+<td align="left">[ $a != $b ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-z</td>
+<td align="left">检测字符串长度是否为0，为0返回 true。</td>
+<td align="left">[ -z $a ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-n</td>
+<td align="left">检测字符串长度是否不为 0，不为 0 返回 true。</td>
+<td align="left">[ -n “$a” ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">检测字符串是否为空，不为空返回 true。</td>
+<td align="left">[ $a ] 返回 true。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p><strong>文件测试运算符</strong></p>
+<blockquote>
+<p>文件测试运算符用于检测 Unix 文件的各种属性。</p>
+</blockquote>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">操作符</th>
+<th align="left">说明</th>
+<th align="left">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-b file</td>
+<td align="left">检测文件是否是块设备文件，如果是，则返回 true。</td>
+<td align="left">[ -b $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-c file</td>
+<td align="left">检测文件是否是字符设备文件，如果是，则返回 true。</td>
+<td align="left">[ -c $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-d file</td>
+<td align="left">检测文件是否是目录，如果是，则返回 true。</td>
+<td align="left">[ -d $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-f file</td>
+<td align="left">检测文件是否是普通文件（既不是目录，也不是设备文件），如果是，则返回 true。</td>
+<td align="left">[ -f $file ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-g file</td>
+<td align="left">检测文件是否设置了 SGID 位，如果是，则返回 true。</td>
+<td align="left">[ -g $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-k file</td>
+<td align="left">检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true。</td>
+<td align="left">[ -k $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-p file</td>
+<td align="left">检测文件是否是有名管道，如果是，则返回 true。</td>
+<td align="left">[ -p $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-u file</td>
+<td align="left">检测文件是否设置了 SUID 位，如果是，则返回 true。</td>
+<td align="left">[ -u $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-r file</td>
+<td align="left">检测文件是否可读，如果是，则返回 true。</td>
+<td align="left">[ -r $file ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-w file</td>
+<td align="left">检测文件是否可写，如果是，则返回 true。</td>
+<td align="left">[ -w $file ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-x file</td>
+<td align="left">检测文件是否可执行，如果是，则返回 true。</td>
+<td align="left">[ -x $file ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-s file</td>
+<td align="left">检测文件是否为空（文件大小是否大于0），不为空返回 true。</td>
+<td align="left">[ -s $file ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-e file</td>
+<td align="left">检测文件（包括目录）是否存在，如果是，则返回 true。</td>
+<td align="left">[ -e $file ] 返回 true。</td>
+</tr>
+</tbody></table>
+<ul>
+<li>其他检查符：<ul>
+<li><strong>-S</strong>: 判断某文件是否 socket。</li>
+<li><strong>-L</strong>: 检测文件是否存在并且是一个符号链接。<br>```shell<br>#!/bin/bash</li>
+</ul>
+</li>
+</ul>
+<p>file=”/tmp/exlog/test.sh”</p>
+<p>if [ -d $file ]<br>then<br>   echo “文件是个目录”<br>else<br>   echo “文件不是个目录”<br>fi<br>if [ -r $file ]<br>then<br>   echo “文件可读”<br>else<br>   echo “文件不可读”<br>fi<br>if [ -w $file ]<br>then<br>   echo “文件可写”<br>else<br>   echo “文件不可写”<br>fi<br>if [ -x $file ]<br>then<br>   echo “文件可执行”<br>else<br>   echo “文件不可执行”<br>fi</p>
+<pre><code>
 
 
 ## shell 输出
@@ -283,7 +743,11 @@ echo &#39;$name\&quot;&#39;
 echo `date`
 
 # Thu Jul 24 10:08:46 CST 2014
-</code></pre><h4 id="printf-命令"><a href="#printf-命令" class="headerlink" title="printf 命令"></a>printf 命令</h4><blockquote><p>printf 使用引用文本或空格分隔的参数，外面可以在 printf 中使用格式化字符串，还可以制定字符串的宽度、左右对齐方式等。<br>默认 printf 不会像 echo 自动添加换行符，我们可以手动添加 \n</p></blockquote><pre><code class="shell">#!/bin/bash
+</code></pre>
+<h4 id="printf-命令"><a href="#printf-命令" class="headerlink" title="printf 命令"></a>printf 命令</h4><blockquote>
+<p>printf 使用引用文本或空格分隔的参数，外面可以在 printf 中使用格式化字符串，还可以制定字符串的宽度、左右对齐方式等。<br>默认 printf 不会像 echo 自动添加换行符，我们可以手动添加 \n</p>
+</blockquote>
+<pre><code class="shell">#!/bin/bash
 echo &quot;Hello, Shell&quot;
 printf &quot;Hello, Shell\n&quot;
 
@@ -297,7 +761,52 @@ printf &quot;%-10s %-8s %-4.2f\n&quot; 郭芙 女 47.9876
     郭靖     男      66.12
     杨过     男      48.65
     郭芙     女      47.99
-</code></pre><p><strong>%s %c %d %f</strong> 都是格式替代符，<strong>％s</strong> 输出一个字符串，<strong>％d</strong> 整型输出，<strong>％c</strong> 输出一个字符，<strong>％f</strong> 输出实数，以小数形式输出。<br><strong>%-10s</strong> 指一个宽度为 10 个字符（**-** 表示左对齐，没有则表示右对齐），任何字符都会被显示在 10字符宽的字符内，如果不足则自动以空格填充，超过也会将内容全部显示出来。<br><strong>%-4.2f</strong> 指格式化为小数，其中 <strong>.2</strong> 指保留2位小数。</p><h2 id="Shell-输入-输出重定向"><a href="#Shell-输入-输出重定向" class="headerlink" title="Shell 输入/输出重定向"></a>Shell 输入/输出重定向</h2><table><thead><tr><th align="left">命令</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">command &gt; file</td><td align="left">将输出重定向到 file。</td></tr><tr><td align="left">command &lt; file</td><td align="left">将输入重定向到 file。</td></tr><tr><td align="left">command &gt;&gt; file</td><td align="left">将输出以追加的方式重定向到 file。</td></tr><tr><td align="left">n &gt; file</td><td align="left">将文件描述符为 n 的文件重定向到 file。</td></tr><tr><td align="left">n &gt;&gt; file</td><td align="left">将文件描述符为 n 的文件以追加的方式重定向到 file。</td></tr><tr><td align="left">n &gt;&amp; m</td><td align="left">将输出文件 m 和 n 合并。</td></tr><tr><td align="left">n &lt;&amp; m</td><td align="left">将输入文件 m 和 n 合并。</td></tr><tr><td align="left">&lt;&lt; tag</td><td align="left">将开始标记 tag 和结束标记 tag 之间的内容作为输入。</td></tr></tbody></table><blockquote><p><em>需要注意的是文件描述符 0 通常是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。</em></p></blockquote><h2 id="shell-流程控制"><a href="#shell-流程控制" class="headerlink" title="shell 流程控制"></a>shell 流程控制</h2><h3 id="if-控制语句"><a href="#if-控制语句" class="headerlink" title="if 控制语句"></a>if 控制语句</h3><pre><code class="shell">#!/bin/bash
+</code></pre>
+<p><strong>%s %c %d %f</strong> 都是格式替代符，<strong>％s</strong> 输出一个字符串，<strong>％d</strong> 整型输出，<strong>％c</strong> 输出一个字符，<strong>％f</strong> 输出实数，以小数形式输出。<br><strong>%-10s</strong> 指一个宽度为 10 个字符（**-** 表示左对齐，没有则表示右对齐），任何字符都会被显示在 10字符宽的字符内，如果不足则自动以空格填充，超过也会将内容全部显示出来。<br><strong>%-4.2f</strong> 指格式化为小数，其中 <strong>.2</strong> 指保留2位小数。</p>
+<h2 id="Shell-输入-输出重定向"><a href="#Shell-输入-输出重定向" class="headerlink" title="Shell 输入/输出重定向"></a>Shell 输入/输出重定向</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">command &gt; file</td>
+<td align="left">将输出重定向到 file。</td>
+</tr>
+<tr>
+<td align="left">command &lt; file</td>
+<td align="left">将输入重定向到 file。</td>
+</tr>
+<tr>
+<td align="left">command &gt;&gt; file</td>
+<td align="left">将输出以追加的方式重定向到 file。</td>
+</tr>
+<tr>
+<td align="left">n &gt; file</td>
+<td align="left">将文件描述符为 n 的文件重定向到 file。</td>
+</tr>
+<tr>
+<td align="left">n &gt;&gt; file</td>
+<td align="left">将文件描述符为 n 的文件以追加的方式重定向到 file。</td>
+</tr>
+<tr>
+<td align="left">n &gt;&amp; m</td>
+<td align="left">将输出文件 m 和 n 合并。</td>
+</tr>
+<tr>
+<td align="left">n &lt;&amp; m</td>
+<td align="left">将输入文件 m 和 n 合并。</td>
+</tr>
+<tr>
+<td align="left">&lt;&lt; tag</td>
+<td align="left">将开始标记 tag 和结束标记 tag 之间的内容作为输入。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><em>需要注意的是文件描述符 0 通常是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。</em></p>
+</blockquote>
+<h2 id="shell-流程控制"><a href="#shell-流程控制" class="headerlink" title="shell 流程控制"></a>shell 流程控制</h2><h3 id="if-控制语句"><a href="#if-控制语句" class="headerlink" title="if 控制语句"></a>if 控制语句</h3><pre><code class="shell">#!/bin/bash
 
 a=10
 b=20
@@ -313,7 +822,8 @@ then
 else
    echo &quot;没有符合的条件&quot;
 fi
-</code></pre><h3 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h3><pre><code class="shell">#!/bin/bash
+</code></pre>
+<h3 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h3><pre><code class="shell">#!/bin/bash
 
 for loop in 1 2 3 4 5
 do
@@ -335,7 +845,8 @@ done
 for((i=1;i&lt;=5;i++));do
     echo &quot;这是第 $i 次调用&quot;;
 done;
-</code></pre><h3 id="while-语句"><a href="#while-语句" class="headerlink" title="while 语句"></a>while 语句</h3><pre><code class="shell">#!/bin/bash
+</code></pre>
+<h3 id="while-语句"><a href="#while-语句" class="headerlink" title="while 语句"></a>while 语句</h3><pre><code class="shell">#!/bin/bash
 #!/bin/bash
 int=1
 while(( $int&lt;=5 ))
@@ -343,7 +854,11 @@ do
     echo $int
     let &quot;int++&quot;
 done
-</code></pre><blockquote><p>以上实例使用了 Bash let 命令，它用于执行一个或多个表达式，变量计算中不需要加上 $ 来表示变量</p></blockquote><h3 id="无限循环"><a href="#无限循环" class="headerlink" title="无限循环"></a>无限循环</h3><pre><code class="shell">#!/bin/bash
+</code></pre>
+<blockquote>
+<p>以上实例使用了 Bash let 命令，它用于执行一个或多个表达式，变量计算中不需要加上 $ 来表示变量</p>
+</blockquote>
+<h3 id="无限循环"><a href="#无限循环" class="headerlink" title="无限循环"></a>无限循环</h3><pre><code class="shell">#!/bin/bash
 while true
 do
   printf &quot;请输入内容：&quot;
@@ -368,7 +883,11 @@ do
   read content
   echo &quot;您输入额内容是 $&#123;content&#125;&quot;
 done
-</code></pre><h3 id="until-循环"><a href="#until-循环" class="headerlink" title="until 循环"></a>until 循环</h3><blockquote><p>until 循环执行一系列命令直至条件为 true 时停止。<br>until 循环与 while 循环在处理方式上刚好相反。<br>一般 while 循环优于 until 循环，但在某些时候—也只是极少数情况下，until 循环更加有用。</p></blockquote><pre><code class="shell">#!/bin/bash
+</code></pre>
+<h3 id="until-循环"><a href="#until-循环" class="headerlink" title="until 循环"></a>until 循环</h3><blockquote>
+<p>until 循环执行一系列命令直至条件为 true 时停止。<br>until 循环与 while 循环在处理方式上刚好相反。<br>一般 while 循环优于 until 循环，但在某些时候—也只是极少数情况下，until 循环更加有用。</p>
+</blockquote>
+<pre><code class="shell">#!/bin/bash
 
 a=0
 
@@ -377,7 +896,11 @@ do
    echo $a
    a=`expr $a + 1`
 done
-</code></pre><h3 id="case-…-esac"><a href="#case-…-esac" class="headerlink" title="case … esac"></a>case … esac</h3><blockquote><p><strong>case … esac</strong> 为多选择语句,是一种多分枝选择结构，每个 case 分支用右圆括号开始，用两个分号 <strong>;;</strong> 表示 break，即执行结束，跳出整个 case … esac 语句，esac（就是 case 反过来）作为结束标记。<br>可以用 case 语句匹配一个值与一个模式，如果匹配成功，执行相匹配的命令。</p></blockquote><pre><code class="shell">
+</code></pre>
+<h3 id="case-…-esac"><a href="#case-…-esac" class="headerlink" title="case … esac"></a>case … esac</h3><blockquote>
+<p><strong>case … esac</strong> 为多选择语句,是一种多分枝选择结构，每个 case 分支用右圆括号开始，用两个分号 <strong>;;</strong> 表示 break，即执行结束，跳出整个 case … esac 语句，esac（就是 case 反过来）作为结束标记。<br>可以用 case 语句匹配一个值与一个模式，如果匹配成功，执行相匹配的命令。</p>
+</blockquote>
+<pre><code class="shell">
 echo &#39;输入 1 到 4 之间的数字:&#39;
 echo &#39;你输入的数字为:&#39;
 read aNum
@@ -393,7 +916,14 @@ case $aNum in
     *)  echo &#39;你没有输入 1 到 4 之间的数字&#39;
     ;;
 esac
-</code></pre><h3 id="跳出循环"><a href="#跳出循环" class="headerlink" title="跳出循环"></a>跳出循环</h3><ul><li><strong>break</strong><blockquote><p>break 命令允许跳出所有循环（终止执行后面的所有循环）</p></blockquote></li></ul><pre><code class="shell">#!/bin/bash
+</code></pre>
+<h3 id="跳出循环"><a href="#跳出循环" class="headerlink" title="跳出循环"></a>跳出循环</h3><ul>
+<li><strong>break</strong><blockquote>
+<p>break 命令允许跳出所有循环（终止执行后面的所有循环）</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="shell">#!/bin/bash
 while :
 do
     echo -n &quot;输入 1 到 5 之间的数字:&quot;
@@ -406,7 +936,14 @@ do
         ;;
     esac
 done
-</code></pre><ul><li><strong>continue</strong><blockquote><p>continue 命令与 break 命令类似，只有一点差别，它不会跳出所有循环，仅仅跳出当前循环。</p></blockquote></li></ul><pre><code class="shell">#!/bin/bash
+</code></pre>
+<ul>
+<li><strong>continue</strong><blockquote>
+<p>continue 命令与 break 命令类似，只有一点差别，它不会跳出所有循环，仅仅跳出当前循环。</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="shell">#!/bin/bash
 while :
 do
     echo -n &quot;输入 1 到 5 之间的数字: &quot;
@@ -420,7 +957,8 @@ do
         ;;
     esac
 done
-</code></pre><h2 id="Shell-函数"><a href="#Shell-函数" class="headerlink" title="Shell 函数"></a>Shell 函数</h2><pre><code class="shell">#!/bin/bash
+</code></pre>
+<h2 id="Shell-函数"><a href="#Shell-函数" class="headerlink" title="Shell 函数"></a>Shell 函数</h2><pre><code class="shell">#!/bin/bash
 
 # shell 函数定义
 
@@ -433,7 +971,24 @@ done
     [return int;]
 
 &#125;
-</code></pre><blockquote><ul><li>1、可以带function fun() 定义，也可以直接fun() 定义,不带任何参数。</li><li>2、参数返回，可以显示加：return 返回，如果不加，将以最后一条命令运行结果，作为返回值。 return后跟数值n(0-255)</li></ul></blockquote><ul><li><strong>实例</strong><br>```shell<br>#!/bin/bash</li></ul><p>function demo (){<br>echo “这是一个 shell 函数！”<br>}</p><p>echo “—– 函数开始执行 —–”</p><p>demo()</p><p>echo “—– 函数执行完毕 —–”</p><h1 id="函数-return"><a href="#函数-return" class="headerlink" title="函数 return"></a>函数 return</h1><p>function demo_return(){<br>a=10<br>b=20<br>return $((a + b))</p><h1 id="return-a-b"><a href="#return-a-b" class="headerlink" title="return $(($a + $b))"></a>return $(($a + $b))</h1><h1 id="return-a-b-1"><a href="#return-a-b-1" class="headerlink" title="return $[a + b]"></a>return $[a + b]</h1><p>}</p><p>demo_return<br>echo “和：$?”</p><pre><code>&gt; 函数返回值在调用该函数后通过 $? 来获得。
+</code></pre>
+<blockquote>
+<ul>
+<li>1、可以带function fun() 定义，也可以直接fun() 定义,不带任何参数。</li>
+<li>2、参数返回，可以显示加：return 返回，如果不加，将以最后一条命令运行结果，作为返回值。 return后跟数值n(0-255)</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>实例</strong><br>```shell<br>#!/bin/bash</li>
+</ul>
+<p>function demo (){<br>  echo “这是一个 shell 函数！”<br>}</p>
+<p>echo “—– 函数开始执行 —–”</p>
+<p>demo()</p>
+<p>echo “—– 函数执行完毕 —–”</p>
+<h1 id="函数-return"><a href="#函数-return" class="headerlink" title="函数 return"></a>函数 return</h1><p>function demo_return(){<br>  a=10<br>  b=20<br>  return $((a + b))</p>
+<h1 id="return-a-b"><a href="#return-a-b" class="headerlink" title="return $(($a + $b))"></a>return $(($a + $b))</h1><h1 id="return-a-b-1"><a href="#return-a-b-1" class="headerlink" title="return $[a + b]"></a>return $[a + b]</h1><p>}</p>
+<p>demo_return<br>echo “和：$?”</p>
+<pre><code>&gt; 函数返回值在调用该函数后通过 $? 来获得。
 &gt; 注意：所有函数在使用前必须定义。这意味着必须将函数放在脚本开始部分，直至shell解释器首次发现它时，才可以使用。调用函数仅使用其函数名即可
 
 - **函数参数**
@@ -468,7 +1023,11 @@ funWithParam()&#123;
     
 &#125;
 funWithParam 1 2 3 4 5 6 7 8 9 34 73
-</code></pre><ul><li><strong>注意点</strong></li></ul><pre><code class="shell">#!/bin/bash
+</code></pre>
+<ul>
+<li><strong>注意点</strong></li>
+</ul>
+<pre><code class="shell">#!/bin/bash
 function demoFun1()&#123;
     echo &quot;这是我的第一个 shell 函数!&quot;
     return `expr 1 + 1`
@@ -498,7 +1057,11 @@ echo $?  # 显示 上一条 echo 在这里插入命令！ 的结果，0表示没
 这是我的第一个 shell 函数!
 在这里插入命令！
 0
-</code></pre><blockquote><p>调用 demoFun2 后，函数最后一条命令 expr 1 + 1 得到的返回值（$?值）为 0，意思是这个命令没有出错。所有的命令的返回值仅表示其是否出错，而不会有其他有含义的结果。<br>第二次调用 demoFun1 后，没有立即查看 $? 的值，而是先插入了一条别的 echo 命令，最后再查看 $? 的值得到的是 0，也就是上一条 echo 命令的结果，而 demoFun1 的返回值被覆盖了。<br>下面这个测试，连续使用两次 **echo $?**，得到的结果不同，更为直观：</p></blockquote><pre><code class="shell">#!/bin/bash
+</code></pre>
+<blockquote>
+<p>调用 demoFun2 后，函数最后一条命令 expr 1 + 1 得到的返回值（$?值）为 0，意思是这个命令没有出错。所有的命令的返回值仅表示其是否出错，而不会有其他有含义的结果。<br>第二次调用 demoFun1 后，没有立即查看 $? 的值，而是先插入了一条别的 echo 命令，最后再查看 $? 的值得到的是 0，也就是上一条 echo 命令的结果，而 demoFun1 的返回值被覆盖了。<br>下面这个测试，连续使用两次 **echo $?**，得到的结果不同，更为直观：</p>
+</blockquote>
+<pre><code class="shell">#!/bin/bash
 
 function demoFun1()&#123;
     echo &quot;这是我的第一个 shell 函数!&quot;
@@ -514,4 +1077,687 @@ echo $?   # 显示 上一条 echo $? 的结果，0表示没有错误，其他任
 这是我的第一个 shell 函数!
 2
 0
-</code></pre></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2021-11-02</span><i class="fa fa-tag"></i><a class="tag" href="/alwaysblog/categories/后端领域/" title="后端领域">后端领域 </a><a class="tag" href="/alwaysblog/categories/后端领域/编程语言/" title="编程语言">编程语言 </a><a class="tag" href="/alwaysblog/categories/后端领域/编程语言/shell/" title="shell">shell </a><a class="tag" href="/alwaysblog/tags/shell/" title="shell">shell </a><span class="leancloud_visitors"></span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://github.com/alwayscn/alwaysblog/post/4046588353/,张小剩的博客,shell 编程,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/alwaysblog/post/3308975195/" title="python 零基础">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/alwaysblog/post/2562162005/" title="python 基础">下一篇</a></li></ul></div><script src="/alwaysblog/js/visitors.js"></script><a id="comments"></a><div id="vcomments" style="margin:0 30px"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//cdn.jsdelivr.net/gh/xcss/valine@latest/dist/Valine.min.js"></script><script>var valine=new Valine({el:"#vcomments",notify:!1,verify:!1,app_id:"",app_key:"",placeholder:"念念不忘，必有回响...",path:window.location.pathname,serverURLs:"",visitor:!0,recordIP:!0,avatar:"mp"})</script></div></div></div></div><script src="/alwaysblog/js/jquery-migrate-1.2.1.min.js"></script><script src="/alwaysblog/js/jquery.appear.js"></script><script src="/alwaysblog/js/add-bookmark.js"></script><script src="/alwaysblog/js/baidu-tongji.js"></script></body></html>
+</code></pre>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <div id="post-tag">
+              
+                <span>
+                  <i class="iconfont icon-inbox"></i>
+                  
+                    <a class="hover-with-bg" href="/categories/%E5%90%8E%E7%AB%AF%E9%A2%86%E5%9F%9F">后端领域</a>
+                    &nbsp;
+                  
+                    <a class="hover-with-bg" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80">编程语言</a>
+                    &nbsp;
+                  
+                    <a class="hover-with-bg" href="/categories/shell">shell</a>
+                    &nbsp;
+                  
+                </span>
+              
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/shell">shell</a>
+                
+              </span>
+            </div>
+            
+              <div id="post-note">
+                <div><strong>本文作者：</strong><a href="/alwaysblog/">张小剩</a></div>
+                <div><strong>本文链接：</strong><a href="https://github.com/alwayscn/alwaysblog/post/4046588353/">https://github.com/alwayscn/alwaysblog/post/4046588353/</a></div>
+                <div><strong>版权声明：</strong>本站文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh" rel="nofollow noopener noopener">CC BY-NC-SA 3.0 CN</a> 协议进行许可</div>
+              </div>
+            
+            
+              <div id="post-nav" class="container">
+                  <div class="row">
+                    
+                      <a href="/alwaysblog/post/3308975195/" id="post-nav-prev" class="col">
+                        <i class="fas fa-arrow-left"></i>
+                        <span class="post-nav-title">python 零基础</span>
+                      </a>
+                    
+                    
+                      <a href="/alwaysblog/post/2562162005/" id="post-nav-next" class="col">
+                        <span class="post-nav-title">python 基础</span>
+                        <i class="fas fa-arrow-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+            
+          </div>
+        </div>
+
+        <!-- custom -->
+        
+
+        <!-- Comments -->
+        <div class="col-lg-10 mx-auto nopadding-md">
+          <div class="comments mx-auto" id="comments">
+            
+             <br><br>
+              
+              
+  <style type="text/css">
+    .v[data-class=v] .vcontent > p > a:not(.at) {
+      overflow-wrap: anywhere;
+      display: inline;
+    }
+  </style>
+  <div id="vcomments" style="margin: 0 auto;"></div>
+  <script defer src="//cdn.jsdelivr.net/npm/@waline/client@latest/dist/Waline.min.js"></script>
+<!--   <script defer src="//unpkg.zhimg.com/@waline/client@latest/dist/Waline.min.js"></script> -->
+  <script>
+    var notify = 'true' == true ? true : false;
+    var verify = 'true' == true ? true : false;
+    var oldLoad = window.onload;
+    window.onload = function () {
+      // 设置自定义文字
+      const locale = {
+        placeholder: "说点什么吧quq",
+        uploading: "上传中...默认图床在境内可能无法访问"
+      };
+      Waline({
+        el: '#vcomments',
+        serverURL: "https://blog-waline-m0eiqctad-alwayscn.vercel.app/",
+        avatar: "mp",
+        avatarCDN: "https://gravatar.loli.net/avatar/",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10",
+        // 设置 emoji
+        emoji: [
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus',
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo',
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
+        ],
+        // 设置自定义文字
+        locale,
+
+        // 图片上传函数
+         uploadImage: false
+        // uploadImage: function (file) {
+        // return smms(file)
+        //         }
+      });
+      oldLoad && oldLoad();
+      // smms 图床，Authorization 的位置为 smms 图床的 token（可选）
+      function smms(file) {
+        const formData = new FormData();
+        formData.append('smfile', file);
+        formData.append('format', 'json');
+        let data = fetch('https://smms.pvq.workers.dev/upload', {
+          method: 'POST',
+          mode: 'cors',
+          headers: new Headers({
+            'Authorization': 'FNnpntzeJnw1SQc61jL6Tt1UZPzmhLBT'
+          }),
+          body: formData
+        }).then(
+          res => res.json()
+        ).then(function(response) {
+          const checkUrl = new RegExp('^[a-zA-z]+://[^\s]*');
+          let url = response.code == 'image_repeated' ? response.images : (response.data.url ? response.data.url : '');
+          // 若 smms 图床调用失败则转发请求到遇见图床
+          return checkUrl.test(url) ? url : hualigs(file);
+        }).catch(function(error) {
+          // smms 图床调用失败，尝试遇见图床
+          return hualigs(file);
+        });
+        return data;
+      }
+      // 遇见图床
+      function hualigs(file){
+        const formData = new FormData();
+        formData.append('image', file);
+        formData.append('privateStorage', 'backblaze');
+        formData.append('apiType', 'catbox');
+        formData.append('token', '146faa57355f01c8eed8a045eda6a684');
+        return fetch('//www.hualigs.cn/api/upload', {
+          method: 'POST',
+          mode: 'cors',
+          body: formData
+        }).then(
+          res => res.json()
+        ).then(function(response) {
+          const checkUrl = new RegExp('^[a-zA-z]+://[^\s]*');
+          let backblaze = response.data.url.private.backblaze;
+          let catbox = 'https://avatar.75cdn.workers.dev/?url=' + encodeURIComponent(response.data.url.catbox);
+          return checkUrl.test(backblaze) ? backblaze : catbox
+        });
+      }
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://waline.js.org" rel="nofollow noopener noopener">comments
+      powered by Waline.</a></noscript>
+
+
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+<!--     <div class="d-none d-lg-block col-lg-2 toc-container"> -->
+    <div id="toc-container" class="d-none d-lg-block col-lg-2 ">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+    <div class="catalog-close" onclick="close_show(0)">关闭</div>
+    <div id="post-catalog-bar" onclick="close_show(1)" class="post-catalog-bar-left-minborder" style="left: 144px;">
+       <i class="far fa-book-open" style="font-size: 10px"></i> 目 录
+    </div>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    
+  </main>
+  
+<div id="sidebar" class="sidebar-hide">
+  <span class="sidebar-button sidebar-button-shift" id="toggle-sidebar" >
+    <i class="fa fa-arrow-right on" aria-hidden="true"></i>
+  </span>
+  <div class="sidebar-overlay"></div>
+  <div class="sidebar-intrude">
+    <div class="sidebar-avatar">
+      <img src="/alwaysblog/static/images/avatar.jpg" srcset="/alwaysblog/static/images/avatar.jpg" alt="avatar"/>
+    </div>
+    <div class="text-center sidebar-about">
+      <p class="h3 sidebar-author">张小剩</p>
+      <p class="sidebar-subtitle">One two one ... <script type='text/javascript'>console.log('博主认证: https://bbs.liyuans.com')</script></p>
+      
+        <a href="https://github.com/alwayscn" class="h4" target="_blank">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+        <a href="https://www.yuque.com/extime/blog" class="h4" target="_blank">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+        <a href="https://www.cnblogs.com/wehome" class="h4" target="_blank">
+          <i class="fab fa-blog" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+        <a href="mailto:zhangxy.cn@gmail.com" class="h4" target="_blank">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+    </div>
+    <div class="sidebar-friend">
+<!--       <p class="h6 sidebar-friend-title"> -->
+<!--         <span class="sidebar-label-left"><i class="fas fa-user-friends"></i></span> -->
+<!--         <span class="sidebar-label">友情链接</span> -->
+<!--       </p> -->
+      <ul class="list-group">
+        
+          <a href="https://console.leancloud.app/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              LeanCloud
+            </li>
+          </a>
+        
+          <a href="https://vercel.com/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              Vercel
+            </li>
+          </a>
+        
+          <a href="https://hitokoto.cn/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              一言
+            </li>
+          </a>
+        
+          <a href="https://zty.pe/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              打字游戏
+            </li>
+          </a>
+        
+          <a href="https://flipanim.com/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              在线涂鸦
+            </li>
+          </a>
+        
+          <a href="http://gogoame.sumbioun.com/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              Gogoame (午後雨)
+            </li>
+          </a>
+        
+          <a href="https://hin.cool/c/dd.html" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              减压滑碟
+            </li>
+          </a>
+        
+          <a href="https://www.jq22.com/yanshi4710" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              元素周期
+            </li>
+          </a>
+        
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div id="footerContent"  class="rgba-black-slight">
+<footer>
+  <div class="footer-plane">
+      <div class="blog_music">
+        <script src="//music.clwl.online/Player/player.min.js" id="SinKingMusic" key="765"></script>
+      </div>
+      <div class="footer-container">
+
+        <div class="footer-left">
+            <div>
+            <!-- 版权信息 -->
+            
+            <div class="footer-info">
+                
+                  Copyright © 2023&nbsp;张小剩.Powered by
+                 <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener noreferrer">
+                  Fluid
+                 </a>
+                
+            </div>
+            
+            <!-- 备案信息 -->
+            
+            </div>
+
+        </div>
+        <div class="footer-details footer-right">
+            <div>
+                
+                <div class="footer-aside-box">
+                    <i class="fa fa-cog fa-spin"></i>
+                    <span id="span">本站已稳定运行: 128天11小时56分5秒</span>
+                    <script type="text/javascript">
+                        function runtime() {
+                            // 初始时间，日/月/年 时:分:秒
+                            // X = new Date("09/27/2021 07:21:00");
+                            console.log("12/12/2021 07:21:00")
+                            X = new Date("12/12/2021 07:21:00");
+                            Y = new Date();
+                            T = (Y.getTime() - X.getTime());
+                            M = 24 * 60 * 60 * 1000;
+                            a = T / M;
+                            A = Math.floor(a);
+                            b = (a - A) * 24;
+                            B = Math.floor(b);
+                            c = (b - B) * 60;
+                            C = Math.floor((b - B) * 60);
+                            D = Math.floor((c - C) * 60);
+                            //信息写入到DIV中
+                            span.innerHTML = "本站已稳定运行: " + A + " 天" + B + " 小时" + C + " 分" + D
+                             + " 秒"
+                        }
+
+                        setInterval(runtime, 1000);
+                    </script>
+                </div>
+                
+
+                
+            </div>
+      </div>
+      </div>
+      <!-- 一言 -->
+      
+          <div class="footer-hitokoto">
+            <a id="hitokotoa" href="#" target="_blank" rel="nofollow noopener noreferrer">
+              <span id="hitokoto"></span>
+            </a>
+          </div>
+      
+  </div>
+</footer>
+</div>
+<!-- SCRIPTS -->
+<script src="/alwaysblog/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+<script src="https://cdn.staticfile.org/mdbootstrap/4.8.7/js/mdb.min.js" ></script>
+<script src="/alwaysblog/js/main.js" ></script>
+
+  <script src="/alwaysblog/js/lazyload.js" ></script>
+
+
+  
+    <script src="https://cdn.staticfile.org/tocbot/4.8.1/tocbot.min.js" ></script>
+  
+  <script src="/alwaysblog/js/post.js" ></script>
+
+<!-- Plugins -->
+
+  <script src="/alwaysblog/lib/prettify/prettify.min.js" ></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/typed.js/2.0.9/typed.min.js" ></script>
+  <script type="text/javascript">
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "shell 编程&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/anchor-js/4.2.0/anchor.min.js" ></script>
+  <script type="text/javascript">
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+  <script src="/alwaysblog/js/local-search.js" ></script>
+  <script type="text/javascript">
+    var path = "/alwaysblog/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script type="text/javascript">
+  /* Fancybox */
+  var setupFancybox = function () {
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(function() {
+    var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      $(this).wrap(element);
+    });
+  };
+  setupFancybox();
+  </script>
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+              processEscapes: true,
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          }
+      });
+
+      MathJax.Hub.Queue(function() {
+          var all = MathJax.Hub.getAllJax(), i;
+          for(i=0; i < all.length; i += 1) {
+              all[i].SourceElement().parentNode.className += ' has-jax';
+          }
+      });
+
+    </script>
+
+    <script src="https://cdn.staticfile.org/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML" ></script>
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+  /*一言API*/
+  $(document).ready(function(){getHitokoto();});
+  function hitokoto(e) {
+    $("#hitokoto").stop().fadeOut(function() {
+      $("#hitokoto").html(e.hitokoto);
+      var element = document.getElementById('hitokotoa');
+      element.href = "https://hitokoto.cn/?uuid=" + e.uuid;
+      $("#hitokoto").stop().fadeIn();
+    })
+  };
+  function getHitokoto() {
+    var e = ["a", "b", "c", "d", "e", "i"];
+    fetch('https://v1.hitokoto.cn/?encode=json&charset=utf-8&c=' + e[Math.floor(Math.random() * e.length)], {cache: 'no-cache', method: 'GET', mode: 'cors'}).then(response => response.json()).then(data => {
+      hitokoto(data);
+      setTimeout(getHitokoto, 1e4);
+    }).catch(console.error)
+  };
+  </script>
+
+
+
+
+<!-- Functions -->
+<script type="text/javascript">
+  /* 切换背景 */
+  
+  $("#background").removeClass("banner-bg");
+  $("body").addClass("banner-bg");
+  var postToTopHight = $("#board").offset().top;
+  $(window).scroll(function () {
+    var bgDisplay = false;
+    var scrollHeight = document.body.scrollTop + document.documentElement.scrollTop;
+    bgDisplay = scrollHeight >= postToTopHight;
+    if(bgDisplay) {
+      $('#background').removeClass("rgba-black-slight");
+      $('#mainContent').removeClass("rgba-black-slight");
+      $('#footerContent').removeClass("rgba-black-slight");
+    } else {
+      $('#background').addClass("rgba-black-slight");
+      $('#mainContent').addClass("rgba-black-slight");
+      $('#footerContent').addClass("rgba-black-slight");
+    }
+  });
+  
+</script>
+
+  <script type="text/javascript">
+    /*显示博客运行时间*/
+    var blogRunTime = function () {
+      var runTime = document.getElementById("runtime");
+      var runtimeDate = "12/12/2021 07:21:00";
+	    var createDate = new Date(runtimeDate);
+	    var nowDate = new Date();
+	    var dateLine = nowDate.getTime() - createDate.getTime();
+	    var runDate = Math.floor(dateLine / (1000 * 60 * 60 * 24));
+	    runTime.innerHTML = runDate;
+    };
+    $(document).ready(function(){
+	    blogRunTime();
+    });
+  </script>
+
+
+  <script type="text/javascript">
+    /*窗口监视*/
+    var originalTitle = document.title;
+    window.onblur = function(){document.title = "你不爱我了QAQ"};
+    window.onfocus = function(){document.title = originalTitle};
+  </script>
+
+
+  <script type="text/javascript">
+    /* 雪花效果 */
+    console.log('雪花效果 code by kvv.me');
+    ~function () {
+      function t() {
+          e.width = window.innerWidth,
+          e.height = window.innerHeight,
+          o = Math.round(window.innerWidth * window.innerHeight / 1e4)
+      }
+      function n() {
+          var t = window.innerWidth
+            , d = window.innerHeight
+            , c = e.getContext("2d");
+          c.clearRect(0, 0, t, d),
+          c.fillStyle = "rgba(255, 255, 255, 0.7)",
+          c.beginPath(),
+          a += .01;
+          for (var u = 0; o > u; u++) {
+            var l = r[u];
+            if (!l) {
+              continue
+            }
+            ;c.moveTo(l.x, l.y),
+            c.arc(l.x, l.y, l.radius, 0, 2 * Math.PI, !0),
+            l.y += Math.cos(a) + l.radius / 2,
+            l.x += Math.sin(a * l.direction),
+            (l.x > t + 5 || -5 > l.x || l.y > d) && (u % 3 > 0 ? (r[u].x = Math.random() * t,
+            r[u].y = -10) : Math.sin(a * l.direction) > 0 ? (r[u].x = -5,
+            r[u].y = Math.random() * d) : (r[u].x = t + 5,
+            r[u].y = Math.random() * d))
+          }
+          c.fill(),
+          i(n)
+      }
+      var e = document.createElement("canvas")
+        , i = requestAnimationFrame || msRequestAnimationFrame || function(t) {
+          setTimeout(t, 16)
+        }
+      , a = 0
+      , o = 0
+      , r = [];
+      t(),
+      e.className = "snow",
+      document.body.appendChild(e);
+      for (var d = 0; o > d; d++)
+        r.push({
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            radius: 4 * Math.random() + 1,
+            direction: 2 * Math.random() - .5
+        });
+      addEventListener("resize", t),
+      i(n)
+    }();
+  </script>
+
+
+  <script type="text/javascript">
+    /* 评论自动跳转 */
+    var jumpComments = function(){
+      if(window.location.hash){
+        var hash_decode = decodeURI(window.location.hash);
+        if(!$(hash_decode).length){
+          var checkExist = setInterval(function() {
+            if ($(hash_decode).length) {
+              clearInterval(checkExist);
+              setTimeout(function(){
+                $('html, body').animate({scrollTop: $(hash_decode).offset().top-90}, 1000);
+              }, 1500);
+            }
+          }, 100);
+        }
+      }
+    }
+    $(document).ready(function(){
+	    jumpComments();
+    });
+  </script>
+
+ 
+ 
+ 
+ 
+
+<!-- cnzz -->
+<style type="text/css">#cnzz_stat_icon_1258664352{display: none;}</style>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258664352'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258664352' type='text/javascript'%3E%3C/script%3E"));</script>
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150991779-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "UA-150991779-1");
+</script>
+ 
+
+  
+</body>
+</html>
